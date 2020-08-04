@@ -1,0 +1,23 @@
+{% include 'company_landing_page.html' %}
+<div class=container1>
+	<ol class="breadcrumb my-4">
+        <li class="breadcrumb-item">{{company.companyName}}</li>
+        <li class="breadcrumb-item active">{{ company.companyName}}  Company Overview</li>
+    </ol>
+<style >
+
+    .container1{    
+    position: relative;
+    left: 210px;
+    width: 80%;
+    height: 100%;}
+
+</style>
+<div id="page-content" align="left">
+<h4>Company Bio</h4>
+<p>{{company.overview}}</p>
+<h4>Company Website</h4>
+<a href='{{company.companyURL}}' style="color: #0000FF">{{company.companyURL}}</a>
+<h4>Competitors</h4>
+<p>{{company.competitors}}</p>
+</div> 

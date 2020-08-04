@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}<!DOCTYPE html>
+{% block 'content' %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Company Board</title>
+  </head>
+  <body>
+    <div class="container">
+      <ol class="breadcrumb my-4">
+        <li class="breadcrumb-item active">Company Research</li>
+      </ol>
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Company</th>
+            <th>Industry</th>
+            <th>Headquaters</th>
+            <th>Employees</th>
+          </tr>
+        </thead>
+        <tbody>
+  	 {% for row in company %}
+   		     <tr>
+		        <td><a href="{% url 'company_specific' row.pk%}">
+            {{ row.companyName }}
+          </td>
+  		      <td>{{ row.industry }}</td>
+    		    <td>{{ row.headquarters }}</td>
+   		      <td>{{ row.employee_count }}</td>
+ 		       </tr>
+ 	   {% endfor %} 
+	     </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+{% endblock %}

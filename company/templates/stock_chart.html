@@ -1,0 +1,24 @@
+{% include 'company_landing_page.html' %}
+<div class=container1>
+	<ol class="breadcrumb my-4">
+        <li class="breadcrumb-item">{{company.companyName}}</li>
+        <li class="breadcrumb-item active">Financials - Stock Chart</li>
+    </ol>
+   <style>
+    .container1{    
+    position: relative;
+    left: 210px;
+    width: 80%;
+    height: 100%;}
+
+  </style>
+ <div align="center">
+<h1>{{company.companyName}} Ticker Symbol</h1>
+<br></br>
+<br></br>
+<img src = {{ stock_chart.chartURL }} alt="chart" class="img-fluid"/>
+<br></br>
+<br></br>
+<p> Add some stock news down here </p>
+</div>
+</div>

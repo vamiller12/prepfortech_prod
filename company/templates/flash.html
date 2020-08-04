@@ -1,0 +1,59 @@
+{% include 'company_landing_page.html' %}
+<div class=container1>
+	<ol class="breadcrumb my-4">
+        <li class="breadcrumb-item">{{company.companyName}}</li>
+        <li class="breadcrumb-item"><a href="{% url 'productflashcards' company.pk%}">{{company.companyName}} Flashcards</a></li>
+    	<li class="breadcrumb-item active">
+    		{% for row in prod_lines %}
+    			{{row.product_line}} Vocab
+    		{% endfor %}
+    	</li>
+    </ol>
+<style>
+.container1{    
+    position: relative;
+    left: 210px;
+    width: 80%;
+    height: 100%;
+}
+
+.card-container {
+  cursor: pointer;
+  perspective: 600;
+}
+.card {
+  background: #eaeaed;
+  color: #0087cc;
+  transform-style: preserve-3d;
+  transition: all .8s ease-in;
+  width: 50%;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card .side {
+  backface-visibility: hidden;
+  border-radius: 6px;
+}
+
+.card .back {
+  color: #0087cc;
+  transform: rotateY(180deg);
+
+}
+</style>
+
+<br></br>
+<div id="flashcards">
+{% for word in categories%}
+<div class="card-container" align="center">
+       <div class="card" align="center">
+        <div class="side" align="center">{{word.term__term}}</div>
+        <div class="side back">{{word.term__definition}}</div>
+       </div>
+      </div>
+<br></br>
+{% endfor %}
+</div>

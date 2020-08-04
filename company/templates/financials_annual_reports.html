@@ -1,0 +1,67 @@
+{% include 'company_landing_page.html' %}
+{% load static %}<!DOCTYPE html>
+<div class=container1>
+	<ol class="breadcrumb my-4">
+        <li class="breadcrumb-item">{{company.companyName}}</li>
+        <li class="breadcrumb-item active">Financials - Annual Reports</li>
+    </ol>
+   <style>
+    .container1{    
+    position: relative;
+    left: 210px;
+    width: 80%;
+    height: 100%;}
+
+  </style>
+<div align="center">
+<h1>{{company.companyName}} Annual Reports</h1>
+<br></br>
+<div class="row">
+  <div class="col-md-4"><button class="btn btn-info" onclick="Show2018()">2018 Report</button></div>
+  <div class="col-md-4"><button class="btn btn-info" onclick="Show2019()">2019 Report</button></div>
+  <div class="col-md-4"><button class="btn btn-info" onclick="Show2020()">2020 Report</button></div>
+</div>
+<br></br>
+<div id="2018Report" class=" pdfobject-container" style ="display:none">
+	<embed class="pdfobject" 
+			{% with '/financials/annual_reports/'|add:company.companyName|add:'/2018 Annual Report.pdf' as annual_report %}
+  				src="{% static annual_report %}"
+			{% endwith %}
+			type="application/pdf" 
+			style="overflow: auto; width: 100%; height: 800px;">
+</div>
+<div id="2019Report" class=" pdfobject-container" style ="display:none">
+	<embed class="pdfobject" 
+			{% with '/financials/annual_reports/'|add:company.companyName|add:'/2019 Annual Report.pdf' as annual_report %}
+  				src="{% static annual_report %}"
+			{% endwith %}
+			type="application/pdf" 
+			style="overflow: auto; width: 100%; height: 800px;">
+</div>
+<div id="2020Report" class=" pdfobject-container" style ="display:none">
+	<embed class="pdfobject" 
+			{% with '/financials/annual_reports/'|add:company.companyName|add:'/2020 Annual Report.pdf' as annual_report %}
+  				src="{% static annual_report %}"
+			{% endwith %}
+			type="application/pdf" 
+			style="overflow: auto; width: 100%; height: 800px;">
+</div>
+</div>
+</div>
+<script type="text/javascript">
+function Show2018() {
+    document.getElementById("2018Report").style.display='block';
+    document.getElementById("2019Report").style.display='none';
+ 	document.getElementById("2020Report").style.display='none';
+}	
+function Show2019() {
+    document.getElementById("2018Report").style.display='none';
+ 	document.getElementById("2019Report").style.display='block';
+ 	document.getElementById("2020Report").style.display='none';
+}	
+function Show2020() {
+ 	document.getElementById("2018Report").style.display='none';
+    document.getElementById("2019Report").style.display='none';
+ 	document.getElementById("2020Report").style.display='block';
+}	
+</script>

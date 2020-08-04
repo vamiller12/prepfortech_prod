@@ -1,0 +1,49 @@
+{% include 'company_landing_page.html' %}
+<div class=container1>
+	<ol class="breadcrumb my-4">
+        <li class="breadcrumb-item">{{company.companyName}}</li>
+        <li class="breadcrumb-item active">Financials - Company Trends</li>
+    </ol>
+<style>
+    .container1{    
+    position: relative;
+    left: 210px;
+    width: 80%;
+    height: 100%;}
+
+</style>
+<div align="center">
+	<table class="table table-bordered">
+    				  <thead>
+    				  <tr align="center">
+   				     <th>Ratio</th>
+ 				     <th>FY2020</th>
+ 				     <th>FY2019</th>
+ 				     <th>FY2018</th>
+ 				  </tr>
+				  </thead>
+				  <tbody id="myTable">
+					{% for row in fin_trends %}
+					<tr align="center">
+						<td> {{row.ratio_name}} </td> 
+						<td
+						{% if row.FY2020 >= row.FY2019 %}
+						bgcolor="#98FB98"
+						{% else %}
+						bgcolor="#FFC0CB"
+						{% endif %}
+						> {{row.FY2020}} </td>
+						<td
+						{% if row.FY2019 >= row.FY2018 %}
+						bgcolor="#98FB98"
+						{% else %}
+						bgcolor="#FFC0CB"
+						{% endif %}
+						> {{row.FY2019}} </td>
+						<td> {{row.FY2018}} </td>
+					</tr>
+					{% endfor %} 
+					</tbody>
+	</table>
+</div>
+</div>

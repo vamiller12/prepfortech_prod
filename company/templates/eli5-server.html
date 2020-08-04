@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'explained'%}">ELI5</a></li>
+      <li class="breadcrumb-item active">What is a server?</li>
+    </ol>
+<style >
+.container1{    
+position: relative;
+left: 210px;
+width: 80%;
+height: 100%;}
+</style>
+
+<div class="col-lg-9" >
+    <div class="card mt-4">
+        <img class="card-img-top img-fluid" src="{% static 'img/eli5/server_types.png' %}" alt="">
+        <div class="card-body">
+    	    <h3 class="card-title" align="center">Servers</h3>
+            <h4>TL;DR</h4>
+            <p class="card-text">A server is a computer built for a specific purpose. Servers are configured to handle certain tasks. This allows for the server to be fine-tuned to the specific needs for that task. Servers are made up of many components with the important features related to the number of processors to handle requests and the amount of available storage to store data. </p>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-body">	
+            	<p>To demonstrate how many different types of servers there are, below is a list of the common servers you may come across.
+            	<li>Web Servers - Ex: Apache</li>
+            	<li>Application Servers - Ex: JBoss</li>
+            	<li>File Servers - Ex: The shared drive at work</li>
+            	<li>Database Servers - Ex: Microsoft SQL Server</li>
+            	<li>Collaboration Servers - Ex: Microsoft SharePoint</li>
+            	<li>Mail Servers - Ex: Microsoft Exchange</li>
+            	<li>Print Servers - Ex: Usually bundled with production printers</li>
+            	</p>
+            
+        </div>
+     </div>
+</div>
+</div>
+{% endblock %}

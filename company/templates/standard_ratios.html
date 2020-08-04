@@ -1,0 +1,39 @@
+{% include 'company_landing_page.html' %}
+<div class=container1>
+	<ol class="breadcrumb my-4">
+        <li class="breadcrumb-item">{{company.companyName}}</li>
+        <li class="breadcrumb-item active">Financials - Standard Ratios</li>
+    </ol>
+<style>
+    .container1{    
+    position: relative;
+    left: 210px;
+    width: 80%;
+    height: 100%;}
+
+</style>
+<div align="center">
+	<table class="table table-bordered">
+    				  <thead>
+    				  <tr align="center">
+   				     <th>Ratio</th>
+ 				     <th>FY2020</th>
+ 				     <th>FY2019</th>
+ 				     <th>FY2018</th>
+ 				  </tr>
+				  </thead>
+				    <tbody id="myTable">
+					{% for row in fin_ratios %}
+					<tr align="center">
+						<td> {{row.ratio_name}} </td> 
+						<td> {{row.FY2020}} </td>
+						<td> {{row.FY2019}} </td>
+						<td> {{row.FY2018}} </td>
+					</tr>
+					{% endfor %} 
+	
+					</tbody>
+	</table>
+</div>
+</div>
+ -->

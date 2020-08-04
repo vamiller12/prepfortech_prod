@@ -1,0 +1,84 @@
+{% include 'company_landing_page.html' %}
+<div class=container1>
+	<ol class="breadcrumb my-4">
+        <li class="breadcrumb-item">{{company.companyName}}</li>
+        <li class="breadcrumb-item active">Products - Product Catalog</li>
+    </ol>
+    
+
+
+<style >
+
+    .container1{    
+    position: relative;
+    left: 210px;
+    width: 80%;
+    height: 100%;}
+
+	{% for line in prod_lines %}
+	#section{{line.pk}} {background-color: #edf0ee;}
+	{% endfor %}
+</style>
+<div align="right">
+	<body data-spy="scroll" data-target="#myScrollspy" data-offset="100">
+		<div class="container">
+		  <div class="row" align="center">
+		    <nav class="col-sm-3 col-2" id="myScrollspy">
+		      <ul class="nav nav-pills flex-column" > 
+		        {% for line in prod_lines %}
+		        <li class="nav-item">
+		          <a class="nav-link"  href="#section{{line.pk}}">{{line.product_line}}</a>
+		        </li>
+		        {% endfor %}	
+		      </ul>
+		     </nav>
+		<div class="col-md-9 col-8">
+				{% for line in prod_lines %}
+				<div id="section{{line.pk}}">    
+				<h3 class="text-center">{{line.product_line}} - Products</h3>
+				{% for row in prod_spec %}
+    				{% if row.parent_product_line__product_line == line.product_line %}
+				  	<div class="text-left" style="padding-left:30px;">
+			           	<p class="font-weight-bold">{{row.product_name}}</p>
+				    	<ul class="font-weight-bold" style="margin-top:-10px;">{{company.companyName}} Description:</ul>
+						<ul style="margin-top:-10px;">{{row.company_desc}}</ul>
+				    	<ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+						<ul style="margin-top:-10px;">{{row.friendly_desc}}</ul>
+				  	</div>
+				  	 {% endif %}	
+				 {% endfor %}
+				 <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#VC_spec{{line.pk}}">{{line.product_line}} - Product Vocab</button>
+					<!-- Modal -->
+					<div class="modal fade" id="VC_spec{{line.pk}}" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="staticBackdropLabel">{{line.product_line}} Vocab</h5>
+					        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					     	</div>
+					     	<div class="modal-body">
+					     		{% for word in prod_spec_vocab %}
+					     			{% if word.specific_product__product_line == line.product_line %}
+					   				<p class="font-weight-bold">{{word.term__term}}</p>
+						  			<ul>{{word.term__definition}}</ul>
+									{% endif %}
+								{% endfor %}
+					      	</div>
+					      	<div class="modal-footer">
+					        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					      	</div>
+					    </div>
+					  </div>
+					</div>
+				  </div>
+				 {% endfor %}
+				</div>
+			</div>
+		</div>
+	</body>
+</div>
+
+
+
+
+    

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'quiz_index'%}">Test Your Knowledge</a></li>
+      <li class="breadcrumb-item active">{{ quiz.title }}</li>
+    </ol>
+<style >
+    .container1{    
+    position: relative;
+    left: 210px;
+    width: 80%;
+    height: 100%;}
+
+    
+
+</style>
+<h2 align="center"> {{ quiz.title }}</h2>
+<p>{{ quiz.description }}</p>
+<div>
+<a href="{% url 'quiz_question' quiz_name=quiz.url %}" class="btn btn-primary btn-lg btn-block">Start The Test</a>
+</div>
+{% endblock %}

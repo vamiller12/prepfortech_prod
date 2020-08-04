@@ -1,0 +1,1882 @@
+{% extends 'base.html' %}
+{% load static %}<!DOCTYPE html>
+{% block 'content' %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ company.companyName}}</title>
+
+  </head>
+  <body>
+    <div class="container">
+      <ol class="breadcrumb my-4">
+        <li class="breadcrumb-item"><a href="{% url 'company_research_board'%}">Company</a></li>
+        <li class="breadcrumb-item active">{{ company.companyName}}</li>
+      </ol>
+    </div>
+    
+<div class="container">
+    <div id="accordion" class="accordion">
+       <div class="w3-hide w3-center"> 
+	<div class="w-100 p-3">
+         <div class="card mb-0">
+	  <div class="card text-center">
+	    <div class="card-header" role="tab" id="CompanyOverviewHeader">
+      		<a data-toggle="collapse" data-parent="#accordion" href="#collapseCompanyOverview" aria-expanded="false" aria-controls="collapseCompanyOverview">
+        		<h5 class="mb-0"> Company Overview </h5>
+      		</a>
+    	    </div>
+    	    <div id="collapseCompanyOverview" class="collapse" role="tabpanel" aria-labelledby="CompanyOverviewHeader" data-parent="#accordion">
+		<div class="bd-example bd-example-tabs">
+  		  <div class="row">
+    		    <div class="col-3">
+      			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        			<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="false">Company Profile</a>
+        			<a class="nav-link" id="v-pills-gd-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Glassdoor Rating</a>
+        			<a class="nav-link" id="v-pills-industry-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Industry</a>
+        			<a class="nav-link active show" id="v-pills-competitors-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="true">Competitors</a>
+      			</div>
+    		    </div>
+    		<div class="col-9">
+      		   <div class="tab-content" id="v-pills-tabContent">
+        		<div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          		{{company.companyName}}
+        		</div>
+        		<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-gd-tab">
+          		<img src="{% static 'img/vmware_gd.jpg' %}" class="img-responsive" alt="glassdoor">
+        		</div>
+        		<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-Industry-tab">
+          		<p>Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident laboris ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla. Velit et et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est magna commodo est ea veniam consectetur.</p>
+        		</div>
+        		<div class="tab-pane fade active show" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-competitors-tab">
+          		<p>Red Hat</p>
+        		</div>
+      		</div>
+    		</div>
+  		</div>
+		</div>
+
+   	    </div>
+            <div class="card-header" role="tab" id="FinancialsHeader">
+      		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFin" aria-expanded="false" aria-controls="collapseFin">
+        		<h5 class="mb-0">
+          		Financials 
+        		</h5>
+      		</a>
+    	    </div>
+    	    <div id="collapseFin" class="collapse" role="tabpanel" aria-labelledby="FinancialsHeader" data-parent="#accordion">
+    	    <div class="bd-finance bd-example-tabs">
+  		  <div class="row">
+    		    <div class="col-3">
+      			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        			<a class="nav-link" id="v-pills-annualreports-tab" data-toggle="pill" href="#v-pills-annualreport" role="tab" aria-controls="v-pills-annualreport" aria-selected="false">Annual Reports</a>
+				<a class="nav-link" id="v-pills-stockchart-tab" data-toggle="pill" href="#v-pills-stockchart" role="tab" aria-controls="v-pills-stockchart" aria-selected="false">9 Month Stock Chart</a>
+   				<a class="nav-link" id="v-pills-ratios-tab" data-toggle="pill" href="#v-pills-ratios" role="tab" aria-controls="v-pills-ratios" aria-selected="false">Financial Ratios</a>        			
+			</div>
+    		    </div>
+    		<div class="col-9">
+      		   <div class="tab-content" id="v-pills-tabContent">
+			<div class="tab-pane fade" id="v-pills-stockchart" role="tabpanel" aria-labelledby="v-pills-stockchart-tab">
+			<h3>VMWare Ticker Symbol</h3>
+			<img src = "https://finviz.com/chart.ashx?t=VMW&ty=c&ta=1&p=d&s=l" alt="chart" class="img-fluid" border = "3" />
+			</div>
+				<div class="tab-pane fade" id="v-pills-annualreport" role="tabpanel" aria-labelledby="v-pills-annualreports-tab">
+				<div class="bd-examples bd-example-tabs">
+  		  			<div class="row">
+    		   			 <div class="col-3">
+      					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        			<a class="nav-link" id="v-pills-annualreports-tab" data-toggle="pill" href="#v-pills-2020-AR" role="tab" aria-controls="v-pills-2020-AR" aria-selected="false">2020</a>
+        			<a class="nav-link" id="v-pills-annualreports-tab" data-toggle="pill" href="#v-pills-2019-AR" role="tab" aria-controls="v-pills-2019-AR" aria-selected="false">2019</a>
+        			<a class="nav-link" id="v-pills-annualreports-tab" data-toggle="pill" href="#v-pills-2018-AR" role="tab" aria-controls="v-pills-2018-AR" aria-selected="false">2018</a>
+      			</div>
+			</div>
+				<div class="col-9">
+      		   		<div class="tab-content" id="v-pills-tabContentyears">
+        			<div class="tab-pane fade" id="v-pills-2020-AR" role="tabpanel" aria-labelledby="v-pills-2020-AR">
+          			<style> #example1.pdfobject-container { height: 30rem; border: 1rem solid rgba(0,0,0,.1); }</style>
+                		<div id="example1" class=" pdfobject-container"><embed class="pdfobject" src="{% static '/financials/annual_reports/2020 Annual Report.pdf' %}" type="application/pdf" style="overflow: auto; width: 100%; height: 100%;"></div>
+           			</div>
+				<div class="tab-pane fade" id="v-pills-2019-AR" role="tabpanel" aria-labelledby="v-pills-2019-AR">
+                		<div id="example1" class=" pdfobject-container"><embed class="pdfobject" src="{% static '/financials/annual_reports/2019 Annual Report.pdf' %}" type="application/pdf" style="overflow: auto; width: 100%; height: 100%;"></div>
+        			</div>
+				<div class="tab-pane fade" id="v-pills-2018-AR" role="tabpanel" aria-labelledby="v-pills-2018-AR">
+                		<div id="example1" class=" pdfobject-container"><embed class="pdfobject" src="{% static '/financials/annual_reports/2018 Annual Report.pdf' %}" type="application/pdf" style="overflow: auto; width: 100%; height: 100%;"></div>
+        			</div>
+			</div>
+</div></div></div>
+			</div>
+			<div class="tab-pane fade" id="v-pills-ratios" role="tabpanel" aria-labelledby="v-pills-ratios-tab">
+			<div class="bd-examples bd-example-tabs">
+  		  			<div class="row">
+    		   			 <div class="col-3">
+      					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        			<a class="nav-link" id="v-pills-ratios-tab" data-toggle="pill" href="#v-pills-traditional-ratios" role="tab" aria-controls="v-pills-traditional-ratios" aria-selected="false">Financial Ratios</a>
+        			<a class="nav-link" id="v-pills-ratios-tab" data-toggle="pill" href="#v-pills-financial-trends" role="tab" aria-controls="v-pills-financial-trends" aria-selected="false">Financial Trends</a>
+      			</div>
+			</div>
+				<div class="col-9">
+      		   		<div class="tab-content" id="v-pills-ratiotypes">
+        			<div class="tab-pane fade" id="v-pills-traditional-ratios" role="tabpanel" aria-labelledby="v-pills-traditional-ratios">
+				<table class="table table-bordered">
+    				  <thead>
+    				  <tr>
+   				     <th>Ratio</th>
+ 				     <th>FY2020</th>
+ 				     <th>FY2019</th>
+ 				     <th>FY2018</th>
+ 				  </tr>
+				  </thead>
+				    <tbody id="myTable">
+<tr><td>priceBookValueRatio</td><td>7.1713</td><td>131.8764</td><td>6.0853</td></tr>
+<tr><td>priceToBookRatio</td><td>7.1713</td><td>131.8764</td><td>6.0853</td></tr>
+<tr><td>priceToSalesRatio</td><td>4.6493</td><td>8.0971</td><td>5.9732</td></tr>
+<tr><td>priceEarningsRatio</td><td>7.839</td><td>30.0016</td><td>83.0173</td></tr>
+<tr><td>receivablesTurnover</td><td>5.7413</td><td>5.6941</td><td>6.0381</td></tr>
+<tr><td>priceToFreeCashFlowsRatio</td><td>13.9893</td><td>21.2591</td><td>16.0515</td></tr>
+<tr><td>priceToOperatingCashFlowsRatio</td><td>12.9813</td><td>19.8372</td><td>14.7368</td></tr>
+<tr><td>priceCashFlowRatio</td><td>12.9813</td><td>19.8372</td><td>14.7368</td></tr>
+<tr><td>priceEarningsToGrowthRatio</td><td>1.3498</td><td>5.051</td><td>13.9415</td></tr>
+<tr><td>priceSalesRatio</td><td>4.6493</td><td>8.0971</td><td>5.9732</td></tr>
+<tr><td>dividendYield</td><td>0</td><td>0.1513</td><td>0</td></tr>
+<tr><td>enterpriseValueMultiple</td><td>21.9714</td><td>28.6626</td><td>22.3767</td></tr>
+<tr><td>priceFairValue</td><td>7.1713</td><td>131.8764</td><td>6.0853</td></tr>
+<tr><td>ebtperEBIT</td><td>0.9979</td><td>1.4063</td><td>1.0663</td></tr>
+<tr><td>ebitperRevenue</td><td>0.1332</td><td>0.2284</td><td>0.2132</td></tr>
+<tr><td>niperEBT</td><td>4.4589</td><td>0.84</td><td>0.3164</td></tr>
+<tr><td>grossProfitMargin</td><td>0.9846</td><td>0.9787</td><td>0.8757</td></tr>
+<tr><td>operatingProfitMargin</td><td>0.1332</td><td>0.2284</td><td>0.2132</td></tr>
+<tr><td>pretaxProfitMargin</td><td>0.133</td><td>0.3212</td><td>0.2273</td></tr>
+<tr><td>netProfitMargin</td><td>0.593</td><td>0.2698</td><td>0.0719</td></tr>
+<tr><td>effectiveTaxRate</td><td>-3.42</td><td>0.1599</td><td>0.6835</td></tr>
+<tr><td>returnOnAssets</td><td>0.2438</td><td>0.1651</td><td>0.0276</td></tr>
+<tr><td>returnOnEquity</td><td>0.9148</td><td>4.3956</td><td>0.0733</td></tr>
+<tr><td>returnOnCapitalEmployed</td><td>0.0902</td><td>0.2286</td><td>0.1083</td></tr>
+<tr><td>nIperEBT</td><td>4.4589</td><td>0.84</td><td>0.3164</td></tr>
+<tr><td>eBTperEBIT</td><td>0.9979</td><td>1.4063</td><td>1.0663</td></tr>
+<tr><td>eBITperRevenue</td><td>0.1332</td><td>0.2284</td><td>0.2132</td></tr>
+<tr><td>receivablesTurnover</td><td>5.7413</td><td>5.6941</td><td>6.0381</td></tr>
+<tr><td>payablesTurnover</td><td>0.798</td><td>1.4148</td><td>65.6</td></tr>
+<tr><td>inventoryTurnover</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>fixedAssetTurnover</td><td>12.202</td><td>7.9205</td><td>7.3761</td></tr>
+<tr><td>assetTurnover</td><td>0.4111</td><td>0.612</td><td>0.3841</td></tr>
+<tr><td>currentRatio</td><td>0.6481</td><td>0.992</td><td>2.7287</td></tr>
+<tr><td>quickRatio</td><td>0.4647</td><td>0.7735</td><td>2.5759</td></tr>
+<tr><td>cashRatio</td><td>0.2823</td><td>0.4968</td><td>1.1863</td></tr>
+<tr><td>daysOfSalesOutstanding</td><td>63.5736</td><td>64.1007</td><td>60.4493</td></tr>
+<tr><td>daysOfInventoryOutstanding</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>operatingCycle</td><td>63.5736</td><td>64.1007</td><td>60.4493</td></tr>
+<tr><td>daysOfPayablesOutstanding</td><td>457.3493</td><td>257.9842</td><td>5.564</td></tr>
+<tr><td>cashConversionCycle</td><td>-393.7757</td><td>-193.8835</td><td>54.8853</td></tr>
+<tr><td>debtRatio</td><td>0.7334</td><td>0.9624</td><td>0.6229</td></tr>
+<tr><td>debtEquityRatio</td><td>2.7514</td><td>25.6098</td><td>1.652</td></tr>
+<tr><td>longtermDebtToCapitalization</td><td>0.0961</td><td>0.8781</td><td>0.3376</td></tr>
+<tr><td>totalDebtToCapitalization</td><td>0.3326</td><td>0.9268</td><td>N/A</td></tr>
+<tr><td>interestCoverage</td><td>9.6711</td><td>15.2985</td><td>22.8243</td></tr>
+<tr><td>cashFlowToDebtRatio</td><td>1.1085</td><td>0.5246</td><td>0.7889</td></tr>
+<tr><td>companyEquityMultiplier</td><td>3.7514</td><td>26.6098</td><td>2.652</td></tr>
+<tr><td>operatingCashFlowPerShare</td><td>9.284</td><td>8.983</td><td>7.8945</td></tr>
+<tr><td>freeCashFlowPerShare</td><td>8.6151</td><td>8.3822</td><td>7.2479</td></tr>
+<tr><td>cashPerShare</td><td>6.9894</td><td>6.9402</td><td>28.6498</td></tr>
+<tr><td>payoutRatio</td><td>0</td><td>4.5417</td><td>0</td></tr>
+<tr><td>receivablesTurnover</td><td>5.7413</td><td>5.6941</td><td>6.0381</td></tr>
+<tr><td>operatingCashFlowSalesRatio</td><td>0.3581</td><td>0.4081</td><td>0.4053</td></tr>
+<tr><td>freeCashFlowOperatingCashFlowRatio</td><td>0.9279</td><td>0.9331</td><td>0.918</td></tr>
+<tr><td>cashFlowCoverageRatios</td><td>1.1085</td><td>0.5246</td><td>0.7889</td></tr>
+<tr><td>shortTermCoverageRatios</td><td>1.4095</td><td>1.2169</td><td>30.2924</td></tr>
+<tr><td>capitalExpenditureCoverageRatios</td><td>13.8781</td><td>14.951</td><td>12.2091</td></tr>
+<tr><td>dividendpaidAndCapexCoverageRatios</td><td>0</td><td>0.3257</td><td>12.2357</td></tr>
+<tr><td>dividendPayoutRatio</td><td>0</td><td>4.5417</td><td>0</td></tr>
+
+
+
+
+				    </tbody>
+				</table>
+           			</div>
+				<div class="tab-pane fade" id="v-pills-financial-trends" role="tabpanel" aria-labelledby="v-pills-financial-trends">
+				<table class="table table-bordered">
+    				  <thead>
+    				  <tr>
+   				     <th>Ratio</th>
+ 				     <th>FY2020</th>
+ 				     <th>FY2019</th>
+ 				     <th>FY2018</th>
+ 				  </tr>
+				  </thead>
+				    <tbody id="myTable">
+<tr><td>revenueGrowth</td><td bgcolor="#98FB98">0.2047</td><td bgcolor="#98FB98">0.1327</td><td bgcolor="#98FB98">0.1168</td></tr>
+<tr><td>grossProfitGrowth</td><td bgcolor="#FFC0CB">0.212</td><td bgcolor="#98FB98">0.2659</td><td bgcolor="#98FB98">0.1192</td></tr>
+<tr><td>ebitgrowth</td><td bgcolor="#FFC0CB">-0.297</td><td bgcolor="#98FB98">0.2137</td><td bgcolor="#98FB98">0.1737</td></tr>
+<tr><td>operatingIncomeGrowth</td><td bgcolor="#FFC0CB">-0.297</td><td bgcolor="#98FB98">0.2137</td><td bgcolor="#98FB98">0.1737</td></tr>
+<tr><td>netIncomeGrowth</td><td>1.6473</td><td>3.2491</td><td>-0.5193</td></tr>
+<tr><td>epsgrowth</td><td>1.5875</td><td>3.2428</td><td>-0.5035</td></tr>
+<tr><td>epsdilutedGrowth</td><td>1.5777</td><td>3.2391</td><td>-0.5035</td></tr>
+<tr><td>weightedAverageSharesGrowth</td><td>2</td><td>4</td><td>-0.5</td></tr>
+<tr><td>weightedAverageSharesDilutedGrowth</td><td>2</td><td>4</td><td>-0.5</td></tr>
+<tr><td>dividendsperShareGrowth</td><td>-1</td><td>0</td><td>0</td></tr>
+<tr><td>operatingCashFlowGrowth</td><td>0.057</td><td>0.1407</td><td>0.3485</td></tr>
+<tr><td>freeCashFlowGrowth</td><td>0.0511</td><td>0.1594</td><td>0.3231</td></tr>
+<tr><td>fiveYRevenueGrowthPerShare</td><td>-0.7611</td><td>-0.3106</td><td>0</td></tr>
+<tr><td>threeYRevenueGrowthPerShare</td><td>-0.7967</td><td>-0.4537</td><td>1.6253</td></tr>
+<tr><td>fiveYOperatingCFGrowthPerShare</td><td>-0.7631</td><td>-0.422</td><td>0</td></tr>
+<tr><td>threeYOperatingCFGrowthPerShare</td><td>-0.7831</td><td>-0.2284</td><td>1.9458</td></tr>
+<tr><td>fiveYNetIncomeGrowthPerShare</td><td>-0.035</td><td>-0.0445</td><td>0</td></tr>
+<tr><td>threeYNetIncomeGrowthPerShare</td><td>-0.2791</td><td>-0.0282</td><td>0.2866</td></tr>
+<tr><td>receivablesGrowth</td><td>0.1947</td><td>0.2012</td><td>-0.2931</td></tr>
+<tr><td>inventoryGrowth</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>assetGrowth</td><td>0.7933</td><td>-0.289</td><td>0.239</td></tr>
+<tr><td>bookValueperShareGrowth</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>debtGrowth</td><td>-0.4997</td><td>0.7154</td><td>1.5907</td></tr>
+<tr><td>rdexpenseGrowth</td><td>0.2769</td><td>0.1253</td><td>0.1676</td></tr>
+<tr><td>sgaexpensesGrowth</td><td>0.6924</td><td>0.1681</td><td>-0.0507</td></tr>
+
+
+				    </tbody>
+				</table>
+        			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+ 			</div>
+			</div>
+			</div>			
+			</div>
+			</div>
+			
+			
+
+			</div>
+	  <div class="card-header" role="tab" id="MediaHeader">
+      		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseMedia"aria-expanded="false" aria-controls="collapseMedia">
+        		<h5 class="mb-0">
+          			Media Presence
+        		</h5>
+     		</a>
+    	   </div>
+    	   <div id="collapseMedia" class="collapse" role="tabpanel" aria-labelledby="MediaHeader" data-parent="#accordion">
+		<div class="bd-example bd-example-tabs">
+  		  <div class="row">
+    		    <div class="col-3">
+      			<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        			<a class="nav-link" id="v-pills-news-tab" data-toggle="pill" href="#v-pills-news" role="tab" aria-controls="v-pills-news" aria-selected="false">Recent News</a>
+        			<a class="nav-link" id="v-pills-twitter-tab" data-toggle="pill" href="#v-pills-twitter" role="tab" aria-controls="v-pills-twitter" aria-selected="false">Twitter</a>
+        			<a class="nav-link" id="v-pills-must-read-news-tab" data-toggle="pill" href="#v-pills-must-read-news" role="tab" aria-controls="v-pills-must-read-news" aria-selected="false">Must Read News</a>
+      			</div>
+    		    </div>
+    		<div class="col-9">
+      		   <div class="tab-content" id="v-pills-tabContent">
+        		<div class="tab-pane fade" id="v-pills-news" role="tabpanel" aria-labelledby="v-pills-news">
+          		<p>Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt excepteur ea incididunt minim occaecat.</p>
+        		</div>
+        		<div class="tab-pane fade" id="v-pills-twitter" role="tabpanel" aria-labelledby="v-pills-twitter">
+			<a class="twitter-timeline" data-width="400" data-height="250" data-theme="light" href="https://twitter.com/VMware?ref_src=twsrc%5Etfw"></a>
+        		</div>
+			<div class="tab-pane fade" id="v-pills-must-read-news" role="tabpanel" aria-labelledby="v-pills-must-read-news">
+			<p style="text-align:left;"><span style="font-weight:bold;">VMWare has their own corporate newsroom. Check it out <a href="https://www.vmware.com/company/news.html">here</a></span></p>
+			<p style="text-align:left;"> Curated Articles:</p>
+			<ol style="margin-top:-10px;"> 	
+			<li style="text-align:left;"><a href="https://news.bloomberglaw.com/mergers-and-antitrust/dell-vmware-sued-over-2-7-billion-take-private-pivotal-buyout">VMWare Sued over Pivotal Purchase<a/></li>
+			<li style="text-align:left;"><a href="https://techcrunch.com/2019/12/30/vmware-completes-2-7-billion-pivotal-acquisition/">VMWare Acquires Pivotal<a/></li>
+			<li style="text-align:left;"><a href="https://www.vmware.com/company/news/releases/vmw-newsfeed.VMware-Completes-Acquisition-of-Carbon-Black.8f0304c4-4784-4cb2-8af9-56a05df515fa.html">VMWare Acquires Carbon Black<a/></li>
+			</ol>
+			<caption style="text-align:right;"> <i>last updated 6-16-2020</i></caption>
+			</div>
+      		</div>
+    		</div>
+  		</div>
+		</div>
+
+   	    </div>
+	    <div class="card-header" role="tab" id="ProductsHeader">
+      		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseProduct"aria-expanded="false" aria-controls="collapseProduct">
+        		<h5 class="mb-0">
+          			Products
+        		</h5>
+     		</a>
+    	    </div>
+	    <div id="collapseProduct" class="collapse" role="tabpanel" aria-labelledby="ProductsHeader" data-parent="#accordion">
+        	<div class="card-body">
+            	   <style>
+  			body {
+    			position: relative;
+ 			}
+ 			ul.nav-pills {
+			top: 375px;
+ 			position: fixed;
+			}
+			div.col-8 div {
+			!height: 250px;
+			}
+		#section1-1 {background-color: #edf0ee;}
+		#section2-1 {background-color: #edf0ee;}
+		#section3-1 {background-color: #edf0ee;}
+		#section4-1 {background-color: #edf0ee;}
+		#section5-1 {background-color: #edf0ee;}
+		#section6-1 {background-color: #edf0ee;}
+		#section7-1 {background-color: #edf0ee;}
+		#section8-1 {background-color: #edf0ee;}
+		#section9-1 {background-color: #edf0ee;}
+		#section10-1 {background-color: #edf0ee;}
+		#section11-1 {background-color: #edf0ee;}
+		#section12-1 {background-color: #edf0ee;}
+
+		   </style>
+		     <body data-spy="scroll" data-target="#myScrollspy" data-offset="100">
+			<div class="container-fluid">
+			  <div class="row" >
+			    <nav class="col-sm-3 col-2" id="myScrollspy">
+			      <ul class="nav nav-pills flex-column" > 
+			        <li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">App Modernization</a>
+			          <div class="dropdown-menu">
+			            <a class="dropdown-item" href="#section1-1">Overview</a>
+			            <a class="dropdown-item" href="#section1-2">Products</a>
+			          </div>
+			        </li>
+				<li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Private and Hybrid Cloud</a>
+			          <div class="dropdown-menu">
+			            <a class="dropdown-item" href="#section2-1">Overview</a>
+			            <a class="dropdown-item" href="#section2-2">Products</a>
+			          </div>
+			        </li>
+				<li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Hyperconverged Infrastructure</a>
+			          <div class="dropdown-menu">
+			            <a class="dropdown-item" href="#section3-1">Overview</a>
+			            <a class="dropdown-item" href="#section3-2">Products</a>
+			          </div>
+			        </li>
+			        <li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Cloud Management</a>
+			          <div class="dropdown-menu">
+			            <a class="dropdown-item" href="#section4-1">Overview</a>
+			            <a class="dropdown-item" href="#section4-2">Products</a>
+			          </div>
+			        </li>
+				<li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Multi-Cloud Operations</a>
+			          <div class="dropdown-menu">
+			            <a class="dropdown-item" href="#section5-1">Overview</a>
+			            <a class="dropdown-item" href="#section5-2">Products</a>
+			          </div>
+			        </li>
+				<li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Virtual Cloud Networking</a>
+			          <div class="dropdown-menu">
+			            <a class="dropdown-item" href="#section6-1">Overview</a>
+			            <a class="dropdown-item" href="#section6-2">Products</a>
+			          </div>
+			        </li>
+				<li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Intrinsic Security</a>
+			          <div class="dropdown-menu">
+			            <a class="dropdown-item" href="#section7-1">Overview</a>
+			            <a class="dropdown-item" href="#section7-2">Products</a>
+			          </div>
+			        </li>
+				<li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Digital Workspace</a>
+			          <div class="dropdown-menu">
+			            <a class="dropdown-item" href="#section8-1">Overview</a>
+			            <a class="dropdown-item" href="#section8-2">Products</a>
+			          </div>
+			        </li>
+				<li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Desktop & App Virtualization</a>
+			          <div class="dropdown-menu">
+			            <a class="dropdown-item" href="#section9-1">Overview</a>
+			            <a class="dropdown-item" href="#section9-2">Products</a>
+			          </div>
+			        </li>
+				<li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Compute Virtualization</a>
+			          <div class="dropdown-menu">
+			            <a class="dropdown-item" href="#section10-1">Overview</a>
+			            <a class="dropdown-item" href="#section10-2">Products</a>
+			          </div>
+			        </li>
+				<li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Storage & Availability</a>
+			          <div class="dropdown-menu">
+			            <a class="dropdown-item" href="#section11-1">Overview</a>
+			            <a class="dropdown-item" href="#section11-2">Products</a>
+			          </div>
+			        </li>
+				<li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Telco Cloud</a>
+			          <div class="dropdown-menu">
+			            <a class="dropdown-item" href="#section12-1">Overview</a>
+			            <a class="dropdown-item" href="#section12-2">Products</a>
+			          </div>
+			        </li>
+			      </ul>
+			    </nav>
+			    <div class="col-sm-9 col-8">
+			      <div id="section1-1" <span class="border border-dark"></span>    
+			        <h1>App Modernization</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold"  style="margin-top:-10px;">From the Company...</p>
+				    <ul  style="margin-top:-10px;">Build new cloud-native apps, modernize existing apps, and operate infrastructure that serves them all across any cloud.</ul>
+				   <p class="font-weight-bold"  style="margin-top:-10px;">What That Acutall Means: </p>
+				    <ul style="margin-top:-10px;">This product line is focused on:</ul>
+					<ul style="margin-top:-10px;"> 1) Allowing companies to create software applications in the cloud</ul>
+					<ul style="margin-top:-10px;"> 2) Helping companies migrate older applications that are non-cloud based into the cloud</ul>
+					<ul style="margin-top:-10px;"> 3) Give companies the operating tools to function once they are in the cloud</ul>
+				   <p class="font-weight-bold"  style="margin-top:-10px;">Why it exsists: </p>
+				     <ul style="margin-top:-10px;"> Since the early 2010's moving to the cloud has been an important decision for many software companies. Moving to the cloud is attractive to companies for many reasons but the main ones are usually costs, increased ease of access for staff, and access to other software </ul>
+				</div>
+					<!-- Button trigger modal -->
+					<button id="AppVCBTN" type="button" class="btn btn-primary" data-toggle="modal" data-target="#AppModVC">
+					  Learn Vocab
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="AppModVC" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+						<div class="modal-header">
+					        <h5 class="modal-title" id="staticBackdropLabel">Learn Vocab</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					   	<p class="font-weight-bold">The Cloud</p>
+						  <ul>The cloud is a way to store data in a non-physical location. An example of a cloud is when you save a file by sending an email to yourself versus in a folder on your desktop. Using that example, there are many reasons you might choose to save your file in an email such as easier access, sharability, and relabiliy. These are among the same reasons companies choose to locate things in the cloud as well. </ul>
+						<p class="font-weight-bold">Cloud-Native</p>
+						  <ul>These are applications that have been previously built using a cloud system. This means that the applications do not have to be mirgrated into the cloud.</ul>
+				           	<p class="font-weight-bold">Modernize Apps</p>
+						  <ul>Modernizing usually relates to upgrading infrastructure, and re-thinking the internal architecture. </ul>
+				           	<p class="font-weight-bold">Infrastructure</p>
+						  <ul>When running software, there has to be hardware that stores, checks, protects, and allows the software to preform its function. The configuration of hardware options (there are many) is typically called the systems infrastructure.</ul>
+				           	<p class="font-weight-bold">Software Architecture</p>
+						  <ul>This is similar to how traditional architecture; the structure around how the object is built. For software, there are priorities given to different aspects (speed, quality, design, etc.) and optimizing for each can lead to different architectures. These decisions are usually made by experienced software engineers or architects.</ul>
+				           	<p class="font-weight-bold">CTO</p>
+						  <ul>The Chief Technology Officer is usually reposnsible for all departments that have a part in the development cycle</ul>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Understood</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+					</div>
+<br></br>
+				<div id="section2-1" <span class="border border-dark"></span> 
+			          <h1>Private and Hybrid Cloud</h1>
+				   <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">From the Company...</p>
+				    <ul style="margin-top:-10px;">Create a common operating environment that extends from data center to cloud to edge.</ul>
+				   <p class="font-weight-bold">What That Acutall Means: </p>
+				    <ul style="margin-top:-10px;">This product line is focused on:</ul>
+					<ul style="margin-top:-10px;"> 1) Giving companies the tools to simplify operating in their applications in public and hybrid clouds</ul>
+					<ul style="margin-top:-10px;"> 2) Giving companies all the operating tools to run a private cloud</ul>
+				   <p class="font-weight-bold">Why it exsists: </p>
+				     <ul style="margin-top:-10px;">Starting with the public and hybrid cloud offerings, companies might use different cloud services for their different application needs. As with any industry, product offerings may be the same at face value but there are nuances that may speak to you..the cloud is no different. However, managing the different systems is difficult since the IT team needs to learn the different tools. This product line aims to simplify that process by letting a company operate all of their public and hybrid clouds with one solution.</ul>
+				     <ul style="margin-top:-10px;">Operating a private cloud is different story. This means the company is usually responsible (they may contract all or some of it out) for all the different infrastructure pieces that make the cloud work.</ul>
+					
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#PHCloudVC">
+					  Learn Vocab
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="PHCloudVC" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+						<div class="modal-header">
+					        <h5 class="modal-title" id="staticBackdropLabel">Learn Vocab</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					   	<p class="font-weight-bold">The Cloud</p>
+						  <ul>The cloud is a way to store data in a non-physical location. An example of a cloud is when you save a file by sending an email to yourself versus in a folder on your desktop. Using that example, there are many reasons you might choose to save your file in an email such as easier access, sharability, and relabiliy. These are among the same reasons companies choose to locate things in the cloud as well. </ul>
+						<p class="font-weight-bold">Private Cloud</p>
+						  <ul>This means that the company using the cloud infrastructure is the only company using that infrastructure. The company can either own all the infrastrucure on-premises or they can be renting the infrasture from a third party. This allows for complete customization control as the company must decide on exactly how to configure the instructure and own the maintence process. The customization piece is mostly important for security and performance needs. Almost all production systems are run in a private cloud. This model is less-scalable than the public cloud since the infrastrucutre they need cannot be allocated on a moments notice.</ul>
+				           	<p class="font-weight-bold">Public Cloud</p>
+						  <ul>This means that the company using the cloud infrastructure is not the only company using those cloud devices (software/hardware). This provides companies with flexibility to scale-up and down with their instructure needs as they need it and puts the burden of maintaining the infrastrucutre on the cloud service provider. This is commonly used for less secure needs in the early stages of the development lifecycle.</ul>
+				           	<p class="font-weight-bold">Hybrid Cloud</p>
+						  <ul>This is a combiniation of a private and public cloud. Companies utilize this method for different applications based on the applications complexity and importance to the organization.</ul>
+				           	<p class="font-weight-bold">Software Architecture</p>
+						  <ul>This is similar to how traditional architecture; the structure around how the object is built. For software, there are priorities given to different aspects (speed, quality, design, etc.) and optimizing for each can lead to different architectures. These decisions are usually made by experienced software engineers or architects.</ul>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Understood</button>
+					      </div>
+					    </div>
+					  </div>
+					  </div>
+			      </div> 
+			      </div> 
+<br></br>
+				<div id="section3-1" <span class="border border-dark"></span> 
+			          <h1>Hyperconverged Infrastructure (HCI)</h1>
+				   <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">From the Company...</p>
+				    <ul style="margin-top:-10px;">Hyperconverged infrastructure (HCI) is a software-defined, unified system that combines all the elements of a traditional data center: storage, compute, networking, and management. This integrated solution uses software and x86 servers to replace expensive, purpose-built hardware. With hyperconverged infrastructure, you’ll decrease data center complexity and increase scalability.</ul>
+				   <p class="font-weight-bold">What That Acutall Means: </p>
+				    <ul style="margin-top:-10px;">This product line is focused on:</ul>
+					<ul style="margin-top:-10px;"> 1) Giving companies a single package to run and operate their data centers</ul>
+				   <p class="font-weight-bold">Why it exsists: </p>
+				     <ul style="margin-top:-10px;">Traditionally, when a company determines configuration options for their data center they have to determine four major caterogies:</ul>
+					<ul style="margin-top:-10px;">1) What machines they want to use to store the data (storage)</ul>
+					<ul style="margin-top:-10px;">2) The resourcing needs the storage machines need to have in order to meet business goals (compute)</ul>
+					<ul style="margin-top:-10px;">3) How the data is going to be transfered between the machines and software applications (networking)</ul>
+					<ul style="margin-top:-10px;">4) How the IT team is going to manage all of the above pieces (management)</ul>
+				     <ul style="margin-top:-10px;">HCI simplifies those decisions by offering a solution that combines each of the four decisions above. HCI is a software defined data center meaning that companies can easily and cost effectively scale their growth for future needs.</ul>
+
+<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#HCIVC">
+					  Learn Vocab
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="HCIVC" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+						<div class="modal-header">
+					        <h5 class="modal-title" id="staticBackdropLabel">Learn Vocab</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					   	<p class="font-weight-bold">Hyperconverged Infrastructure</p>
+						  <ul>Consists of virtualized computing, storage, and networking.</ul>
+						<p class="font-weight-bold">Software-Defined</p>
+						  <ul>The ability to separate the operational, administrative, and control aspects of technical infrastrucutre and devices.</ul>
+				           	<p class="font-weight-bold">Data Center</p>
+						  <ul>A key piece to the cloud infrastructure that allows data to be stored and accessed remotely leading to economies of scale for businesses. This is typically a building that houses servers that can be connected to via the internet. Because this is the phyisical location that can be used as an access point for hosted information, data centers have a high level of physical security and might have confidential locations.</ul>
+				           	<p class="font-weight-bold">Storage</p>
+						  <ul>This refers to the amount of data that can be held in a piece of infrastructure.</ul>
+				           	<p class="font-weight-bold">Compute</p>
+						  <ul>This refers to how much work a machine can preform.</ul>
+				           	<p class="font-weight-bold">Networking</p>
+						  <ul>How data is transferred to between application and the storage and compute infrastructure</ul>
+				           	<p class="font-weight-bold">x86 servers</p>
+						  <ul>Server architecture based on Intel microprocessors. This type of server is commonly found in a data center. </ul>
+				           	<p class="font-weight-bold">Scalability</p>
+						  <ul>The process of adjusting hardware resources to meet the needs of the business.</ul>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Understood</button>
+					      </div>
+					    </div>
+					  </div>
+					  </div>			      
+					</div> 
+			      </div> 
+<br></br>
+				<div id="section4-1" <span class="border border-dark"></span> 
+			          <h1>Cloud Management</h1>
+				   <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">From the Company...</p>
+				    <ul style="margin-top:-10px;">VMware Cloud Management Platform is a manager for hybrid (multi-cloud) environments running anything from traditional to container (cloud native) workloads. vRealize speeds up the delivery of IT services through automation and pre-defined policies, providing high levels of agility and flexibility for developers and lines of business while maintaining governance and control.</ul>
+				   <p class="font-weight-bold">What That Acutall Means: </p>
+				    <ul style="margin-top:-10px;">This product line is focused on:</ul>
+					<ul style="margin-top:-10px;"> 1) Giving companies the tools to simplify operating thier clouds. This product lines very closely alligns with the Private & Hybrid Cloud and Multi-Cloud Operations product lines</ul>
+				   <p class="font-weight-bold">Why it exsists: </p>
+				     <ul style="margin-top:-10px;">Depending a companies cloud needs, they may have hundreds to thousands of clouds that needs to be maintained. In order to manage the workload, this product line helps automate the security, resourcing, and creation portion of the cloud management.</ul>
+<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CloudMgmtVC">
+					  Learn Vocab
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="CloudMgmtVC" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+						<div class="modal-header">
+					        <h5 class="modal-title" id="staticBackdropLabel">Learn Vocab</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					   	<p class="font-weight-bold">Hybrid Cloud</p>
+						  <ul>This is a combiniation of a private and public cloud. Companies utilize this method for different applications based on the applications complexity and importance to the organization.</ul>
+						<p class="font-weight-bold">Container</p>
+						  <ul>A container is a piece of software that enables users to keep their work seperate from existing work. The container sits on top of the existing hardware allowing users to put multiple containers on a single piece of hardware. Containers are like Tupperware. Instead of having to purchase a new fridge for each meal you want to store, you store food in containers so it doesn't affect other food in the fridge. Software containers are no different. </ul>
+				           	<p class="font-weight-bold">Workload</p>
+						  <ul>The amount or a unit of work assigned to a machine</ul>
+				           	<p class="font-weight-bold">Pre-Defined Policies</p>
+						  <ul>These are rules that are already stated and can be reused when called upon. </ul>
+				           	<p class="font-weight-bold">Governance</p>
+						  <ul>The busiess and operational rules a company sets to ensure their systems function as expected and include areas such as safety, security, and maintainence.</ul>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Understood</button>
+					      </div>
+					    </div>
+					  </div>
+					  </div>
+			      </div> 
+			      </div> 
+<br></br>
+				<div id="section5-1" <span class="border border-dark"></span> 
+			          <h1>Multi-Cloud Operations</h1>
+				   <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">From the Company...</p>
+				    <ul style="margin-top:-10px;">Your IT estate is complicated, with workloads deployed natively in multiple clouds, multi-cloud Kubernetes, and VMware private and hybrid clouds. You want the visibility to control cost, usage and configurations across them all.</ul>
+				   <p class="font-weight-bold">What That Acutall Means: </p>
+				    <ul style="margin-top:-10px;">This product line is focused on:</ul>
+					<ul style="margin-top:-10px;"> 1) Giving companies the tools to simplify operating in their applications in public and hybrid clouds</ul>
+					<ul style="margin-top:-10px;"> 2) Giving companies all the operating tools to run a private cloud</ul>
+				   <p class="font-weight-bold">Why it exsists: </p>
+				     <ul style="margin-top:-10px;">When companies decide to use multiple service providers for their clouds, they need a way simplify their management of each cloud to ensure all clouds are operating as expected. This suite of products is designed to aid companies within each area of their monitoring, governence, and security needs.</ul>
+<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MCOVC">
+					  Learn Vocab
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="MCOVC" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+						<div class="modal-header">
+					        <h5 class="modal-title" id="staticBackdropLabel">Learn Vocab</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					   	<p class="font-weight-bold">Workload</p>
+						  <ul>The amount or a unit of work assigned to a machine</ul>
+						<p class="font-weight-bold">Cloud-Native</p>
+						  <ul>These are applications that have been previously built using a cloud system. This means that the applications do not have to be mirgrated into the cloud.</ul>
+				           	<p class="font-weight-bold">Kubernetes</p>
+						  <ul>An open-source software used for container deployments.</ul>
+				           	<p class="font-weight-bold">Containers</p>
+						  <ul>A container is a piece of software that enables users to keep their work seperate from existing work. The container sits on top of the existing hardware allowing users to put multiple containers on a single piece of hardware. Containers are like Tupperware. Instead of having to purchase a new fridge for each meal you want to store, you store food in containers so it doesn't affect other food in the fridge. Software containers are no different. </ul>
+				           	<p class="font-weight-bold">Governence</p>
+						  <ul>The busiess and operational rules a company sets to ensure their systems function as expected and include areas such as safety, security, and maintainence.</ul>
+				           	<p class="font-weight-bold">Public Cloud</p>
+						  <ul>This means that the company using the cloud infrastructure is not the only company using those cloud devices (software/hardware). This provides companies with flexibility to scale-up and down with their instructure needs as they need it and puts the burden of maintaining the infrastrucutre on the cloud service provider. This is commonly used for less secure needs in the early stages of the development lifecycle.</ul>
+				           	<p class="font-weight-bold">Private Cloud</p>
+						  <ul>This means that the company using the cloud infrastructure is the only company using that infrastructure. The company can either own all the infrastrucure on-premises or they can be renting the infrasture from a third party. This allows for complete customization control as the company must decide on exactly how to configure the instructure and own the maintence process. The customization piece is mostly important for security and performance needs. Almost all production systems are run in a private cloud. This model is less-scalable than the public cloud since the infrastrucutre they need cannot be allocated on a moments notice.</ul>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Understood</button>
+					      </div>
+					    </div>
+					  </div>
+					  </div>
+			      </div> 
+			      </div> 
+<br></br>
+				<div id="section6-1" <span class="border border-dark"></span> 
+			          <h1>Virtual Cloud Networking</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">From the Company...</p>
+				    <ul style="margin-top:-10px;">Power your business with a network defined entirely in software with Virtual Cloud Network. Built on best-in-class VMware technologies — including VMware NSX, VMware SD-WAN by VeloCloud, and VMware vRealize Network Insight — Virtual Cloud Network connects and secures your apps and data across private, public, and edge/branch clouds with a scale-out approach that’s independent of underlying physical infrastructure.</ul>
+				   <p class="font-weight-bold">What That Acutall Means: </p>
+				    <ul style="margin-top:-10px;">This product line is focused on:</ul>
+					<ul style="margin-top:-10px;"> 1) Giving companies the tools to connect their data center, software, and applications in a secure, virtual fashion.</ul>
+				   <p class="font-weight-bold">Why it exsists: </p>
+				     <ul style="margin-top:-10px;">When working with a traditional data center, the networking layer is how data is transferred between the different layers that make up the application. For physical data centers and non-cloud based applications, a company had to setup a network for each specific data center and application. As virtual data centers and cloud based applications become the norm, the networking is now able to be easily applied to all data centers and applications.</ul>
+<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#VCNVC">
+					  Learn Vocab
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="VNCVC" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+						<div class="modal-header">
+					        <h5 class="modal-title" id="staticBackdropLabel">Learn Vocab</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					   	<p class="font-weight-bold">Networking</p>
+						  <ul>How data is transferred to between application and the infrastructure</ul>
+						<p class="font-weight-bold">SD-WAN (Service Defined-Wide Area Network)</p>
+						  <ul>This is an architecture used for cloud computing that allows central control to direct traffic instead of having all traffic directed to a central data center for information and access.</ul>
+				           	<p class="font-weight-bold">Public Cloud</p>
+						  <ul>This means that the company using the cloud infrastructure is not the only company using those cloud devices (software/hardware). This provides companies with flexibility to scale-up and down with their instructure needs as they need it and puts the burden of maintaining the infrastrucutre on the cloud service provider. This is commonly used for less secure needs in the early stages of the development lifecycle.</ul>
+				           	<p class="font-weight-bold">Private Cloud</p>
+						  <ul>This means that the company using the cloud infrastructure is the only company using that infrastructure. The company can either own all the infrastrucure on-premises or they can be renting the infrasture from a third party. This allows for complete customization control as the company must decide on exactly how to configure the instructure and own the maintence process. The customization piece is mostly important for security and performance needs. Almost all production systems are run in a private cloud. This model is less-scalable than the public cloud since the infrastrucutre they need cannot be allocated on a moments notice.</ul>
+				           	<p class="font-weight-bold">Containers</p>
+						  <ul>A container is a piece of software that enables users to keep their work seperate from existing work. The container sits on top of the existing hardware allowing users to put multiple containers on a single piece of hardware. Containers are like Tupperware. Instead of having to purchase a new fridge for each meal you want to store, you store food in containers so it doesn't affect other food in the fridge. Software containers are no different. </ul>
+				           	<p class="font-weight-bold">Edge Cloud</p>
+						  <ul></ul>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Understood</button>
+					      </div>
+					    </div>
+					  </div>
+					  </div>
+			      </div>  
+			      </div> 
+<br></br>
+				<div id="section7-1" <span class="border border-dark"></span> 
+			          <h1>Intrinsic Security</h1>
+				   <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">From the Company...</p>
+				    <ul style="margin-top:-10px;">Leverage your infrastructure to provide adaptive protection for your apps and data, regardless of their location or movement, and seamlessly secure your data centers, clouds, and endpoints so your users have the flexibility and freedom to work as they wish</ul>
+				   <p class="font-weight-bold">What That Acutall Means: </p>
+				    <ul style="margin-top:-10px;">This product line is focused on:</ul>
+					<ul style="margin-top:-10px;"> 1) Proving companies with security solutions to protect their data, applications, and users.</ul>
+				   <p class="font-weight-bold">Why it exsists: </p>
+				     <ul style="margin-top:-10px;">Application and data security are two of the most important areas for any technology stack. Data breaches can cost companies millions in fines and incalculable losses in customer trust. VMWare's purchase of Carbon Black shows the importance of offering state-of-the-art cyber security options. This product line is focused on helping companies prevent, detect, identify and respond to threats in real time.</ul>
+<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ISVC">
+					  Learn Vocab
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="ISVC" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+						<div class="modal-header">
+					        <h5 class="modal-title" id="staticBackdropLabel">Learn Vocab</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					   	<p class="font-weight-bold">The Cloud</p>
+						  <ul>The cloud consists of servers, storage, and networking devices that allow people and companies to store their data and run their applications virtually from a central location (usually a data center).</ul>
+						<p class="font-weight-bold">Data Center</p>
+						  <ul>A key piece to the cloud infrastructure that allows data to be stored and accessed remotely leading to economies of scale for businesses. This is typically a building that houses servers that can be connected to via the internet. Because this is the phyisical location that can be used as an access point for hosted information, data centers have a high level of physical security and might have confidential locations.</ul>
+				           	<p class="font-weight-bold">Endpoints</p>
+						  <ul>Refers to the outter tendrons of the computer networking web. It is commonly your computer, phone, tablet, or other device that is the last piece in a network.</ul>
+						  <ul></ul>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Understood</button>
+					      </div>
+					    </div>
+					  </div>
+					  </div>
+			      </div> 
+			      </div> 
+<br></br>
+				<div id="section8-1" <span class="border border-dark"></span> 
+			          <h1>Digital Workspace</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">From the Company...</p>
+				    <ul style="margin-top:-10px;">The digital workspace is a holistic change in the way end-user services are delivered by IT, so you can deliver the apps and data employees need to work across any device. By taking advantage of today’s cloud-based management technologies, digital workspace solutions deliver self-service, out-of-the-box experiences that scale across platforms, locations, and device ownership models.</ul>
+				   <p class="font-weight-bold">What That Acutall Means: </p>
+				    <ul style="margin-top:-10px;">This product line is focused on:</ul>
+					<ul style="margin-top:-10px;"> 1) Helping IT teams maintain security and access for employees to secured applications</ul>
+				   <p class="font-weight-bold">Why it exsists: </p>
+				     <ul style="margin-top:-10px;">To ensure that data security and compliance measures are followed, some applications and databases or data sets can only be accessed via VPN, VM, or being on the companies network. Traditionally, most people would access the information via the company's network since they work in the office. As workers are moving towards remote work, IT Teams needs to make sure the same information is accessible to employees. This product line helps keep the information secure and enable access for an increasing demand of virtual connections.</ul>
+<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DWVC">
+					  Learn Vocab
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="DWVC" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+						<div class="modal-header">
+					        <h5 class="modal-title" id="staticBackdropLabel">Learn Vocab</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					   	<p class="font-weight-bold">VPN (Virtual Provider Network)</p>
+						  <ul></ul>
+						<p class="font-weight-bold">Out-of-the-Box</p>
+						  <ul></ul>
+						  <ul></ul>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Understood</button>
+					      </div>
+					    </div>
+					  </div>
+					  </div>
+			      </div> 
+			      </div> 
+<br></br>
+				<div id="section9-1" <span class="border border-dark"></span> 
+			          <h1>Desktop & App Virtualization</h1>
+				   <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">From the Company...</p>
+				    <ul style="margin-top:-10px;">Desktop Virtualization is a software technology that provides organizations with a streamlined approach to delivering, protecting, and managing desktops and apps while containing costs and ensuring end-users can work anytime, anywhere, across any device.</ul>
+				   <p class="font-weight-bold">What That Acutall Means: </p>
+				    <ul style="margin-top:-10px;">This product line is focused on:</ul>
+					<ul style="margin-top:-10px;"> 1) This product line simplifies IT administration for traditional employment workstation needs.</ul>
+				   <p class="font-weight-bold">Why it exsists: </p>
+				     <ul style="margin-top:-10px;">IT departments traditionally are responsible for setuping up devices for employees. Traditionally, this was accomplished with manually downloading applications such as the Microsoft Suite and granting employee requests for downloading specific applications for their own needs. To scale that process and make it easier, this product line simplifies the administration element of the IT departments job.</ul>
+<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DAVC">
+					  Learn Vocab
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="DAVC" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+						<div class="modal-header">
+					        <h5 class="modal-title" id="staticBackdropLabel">Learn Vocab</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					   	<p class="font-weight-bold">Workstations</p>
+						  <ul>The typical setup found at a desk including the computer and the desktop.</ul>
+						  <ul></ul>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Understood</button>
+					      </div>
+					    </div>
+					  </div>
+					  </div>
+			      </div> 
+			      </div> 
+<br></br>
+				<div id="section10-1" <span class="border border-dark"></span> 
+			          <h1>Compute Virtualization</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">From the Company...</p>
+				    <ul style="margin-top:-10px;">Build a powerful, flexible, and secure digital foundation with a fully virtualized software-defined data center. </ul>
+				   <p class="font-weight-bold">What That Acutall Means: </p>
+				    <ul style="margin-top:-10px;">This product line is focused on:</ul>
+					<ul style="margin-top:-10px;"> 1) Giving companies the tools to create and virtualized environments.</ul>
+				   <p class="font-weight-bold">Why it exsists: </p>
+				     <ul style="margin-top:-10px;">As companies look to move away from physical server and storage, they need tools to convert existing servers and machines into virtualize machines. This product line gives companies the tools to accomplish this and a platform to control and secure the virtualized environment.</ul>
+<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ComputeVirtVC">
+					  Learn Vocab
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="ComputeVirtVC" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+						<div class="modal-header">
+					        <h5 class="modal-title" id="staticBackdropLabel">Learn Vocab</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					   	<p class="font-weight-bold">Software-Defined Data Center</p>
+						  <ul>This is the bundled approach to a data center where all the important pieces that make up a data center are offered together. </ul>
+						<p class="font-weight-bold">Out-of-the-Box</p>
+						  <ul></ul>
+						  <ul></ul>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Understood</button>
+					      </div>
+					    </div>
+					  </div>
+					  </div>
+			      </div>  
+			      </div> 
+<br></br>
+				<div id="section11-1" <span class="border border-dark"></span> 
+			          <h1>Storage & Availability</h1>
+				   <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">From the Company...</p>
+				    <ul style="margin-top:-10px;">Enhance and simplify your storage architecture with software-defined storage technologies.</ul>
+				   <p class="font-weight-bold">What That Acutall Means: </p>
+				    <ul style="margin-top:-10px;">This product line is focused on:</ul>
+					<ul style="margin-top:-10px;"> 1) Providing website disaster recovery options</ul>
+					<ul style="margin-top:-10px;"> 2) Providing storage options</ul>
+				   <p class="font-weight-bold">Why it exsists: </p>
+				     <ul style="margin-top:-10px;">Disater recovery is an important part of any companies disaster preparedness or system interruption protocol. If a website, data center, or application goes down or fails, disaster recovery is the process used to restore the services into their production state. This is a complement to the Intrinsic Security product line. The storage options are also part of the Virtual Networks product line. More information on their rationale can be found there. </ul>
+<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ComputeVirtVC">
+					  Learn Vocab
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="ComputeVirtVC" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+						<div class="modal-header">
+					        <h5 class="modal-title" id="staticBackdropLabel">Learn Vocab</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					   	<p class="font-weight-bold">Software-Defined</p>
+						  <ul>The ability to separate the operational, administrative, and control aspects of technical infrastrucutre and devices.</ul>
+						<p class="font-weight-bold">Storage Architecture</p>
+						  <ul>Block storage and some other kind</ul>
+						  <ul></ul>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Understood</button>
+					      </div>
+					    </div>
+					  </div>
+					  </div>
+			      </div> 
+			      </div> 
+<br></br>
+				<div id="section12-1" <span class="border border-dark"></span> 
+			          <h1>Telco Cloud</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">From the Company...</p>
+				    <ul style="margin-top:-10px;">Create and scale virtual network functions based on real-time demand with a software-defined network infrastructure.</ul>
+				   <p class="font-weight-bold">What That Acutall Means: </p>
+				    <ul style="margin-top:-10px;">This product line is focused on:</ul>
+					<ul style="margin-top:-10px;"> 1) This is a cloud suite for managing cloud that specifically support mobile phones</ul>
+				   <p class="font-weight-bold">Why it exsists: </p>
+				     <ul style="margin-top:-10px;">This is a cloud platform engineered for virtualizing telecom networking needs. Similar to the Virtual Cloud Networking product line, this product line helps Telecom companies move away from physical infrastructures for transferring their data. By offering a platform engineered to handle voice, data, and services, Telecom companies can easily start moving into the cloud for their networking. </ul>
+<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ComputeVirtVC">
+					  Learn Vocab
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="ComputeVirtVC" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+						<div class="modal-header">
+					        <h5 class="modal-title" id="staticBackdropLabel">Learn Vocab</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					   	<p class="font-weight-bold">Software-Defined</p>
+						  <ul>The ability to separate the operational, administrative, and control aspects of technical infrastrucutre and devices.</ul>
+						<p class="font-weight-bold">Storage Architecture</p>
+						  <ul>Block storage and some other kind</ul>
+						  <ul></ul>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Understood</button>
+					      </div>
+					    </div>
+					  </div>
+					  </div>
+			      </div> 
+			      </div> 
+<br></br>
+				<div id="section1-2">    
+			        <h1 class="text-center">App Modernization - Products</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Tanzu Mission Control</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Single point of control to provision and apply policies to all of your Kubernetes across clouds</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				  </div>
+				  <div class="text-left" style="padding-left:30px;" >
+			           <p class="font-weight-bold">Tanzu Application Catalog</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Curated and customized catalog of apps and components available in your private repository</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This provides a catalog of the free options available to developers when building different parts of their applications. Since the catalog is maintained by VMWare, the company does not need to worry about applying updates or managing any applications they choose to use from the catalog. There is also a reporting layer in the tool for conducting security audits.</ul>
+				    </div>
+				  <div class="text-left" style="padding-left:30px;" >
+			           <p class="font-weight-bold">Tanzu Observability by Wavefront</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Enterprise observability that delivers metrics and insights from infrastructure to apps</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a one-stop-shop for monitoring applications and infrastructure. By centralizing monitoring of application health and metrics, it is easier for teams to respond to issues and be proactive in preventing problems.</ul>
+				    </div>
+				  <div class="text-left" style="padding-left:30px;" >
+			           <p class="font-weight-bold">Tanzu Service Mesh</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Enterprise-class service mesh technology to connect and protect your microservices on multi-cluster Kubernetes</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">Come back to this</ul>
+				    </div>
+				  <div class="text-left" style="padding-left:30px;" >
+			           <p class="font-weight-bold">Pivotal GemFire</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Distributed data management platform especially useful for high-volume, latency-sensitive, mission-critical, transactional systems</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a data storage layer sitting between the database and reporting/end user interface. This storage solution holds the data closer to the end users allowing for faster, more stable interactions with the application.</ul>
+				    </div>
+				  <div class="text-left" style="padding-left:30px;" >
+			           <p class="font-weight-bold">Tanzu Kubernetes Grid</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Ubiquitous Kubernetes runtime embedded in vSphere and operable across public clouds and edge</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a Kubernetes management tool. It allows you to manage all of you Kubernetes clusters in one place.</ul>
+				    </div>
+				  <div class="text-left" style="padding-left:30px;" >
+			           <p class="font-weight-bold">Tanzu Application Service</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Application runtime optimized for Spring and Spring Boot with turnkey microservices, operations, and security</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is an application runtime tool that allows users to flip a switch and run their applications using the Spring framework.</ul>
+				    </div>
+				  <div class="text-left" style="padding-left:30px;" >
+			           <p class="font-weight-bold">Pivtoal tc Server</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Lightweight Java application server that extends Apache Tomcat for use in large-scale mission-critical environments</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is an application server for Java that sits on top of the Apache Tomcat web server.</ul>
+				    </div>
+				  <div class="text-left" style="padding-left:30px;" >
+			           <p class="font-weight-bold">Pivotal App Suite</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Middleware platform used by developers and ops to build and run cloud-scale custom applications</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a support package designed to address developers needs within a Java Environment.</ul>
+				    </div>
+				  <div class="text-left" style="padding-left:30px;" >
+			           <p class="font-weight-bold">Pivotal RabbitMQ</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Protocol-based, highly scalable, and easy-to-deploy queuing system that makes handling message traffic virtually effortless</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a version of RabbitMQ that syncs with customers using the Pivotal platform.</ul>
+
+
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#TMCVocab">
+				  Learn Vocab
+				</button>
+				<!-- Modal -->
+				<div class="modal fade" id="TMCVocab" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+					<div class="modal-header">
+				        <h5 class="modal-title" id="staticBackdropLabel">App Modernization Vocab</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				    </div>
+				      <div class="modal-body">
+			           	<p class="font-weight-bold">Provision</p>
+					  <ul>Provisioning is the process of setting up the development infrastructure. During this process, technical specifications (size, speed, etc.) for equipment and resourcing is determined. The final step is to make the new intracsture available to users and systems.</ul>
+				        <p class="font-weight-bold">Kubernetes</p>
+					  <ul>An open-source software used for container deployments.</ul>
+			           	<p class="font-weight-bold">Containers</p>
+					  <ul>A container is a piece of software that enables users to keep their work seperate from existing work. The container sits on top of the existing hardware allowing users to put multiple containers on a single piece of hardware. Containers are like Tupperware. Instead of having to purchase a new fridge for each meal you want to store, you store food in containers so it doesn't affect other food in the fridge. Software containers are no different. </ul>
+			           	<p class="font-weight-bold">Microservices</p>
+					  <ul>This is a software architecture design choice based on making an application as a collection of small services. Instead of having one major code base (often described as a monolith) that is responsible for the entire appliction, the application is split into logical sections (services) usually based on application function. </ul>
+			           	<p class="font-weight-bold">Mesh Network</p>
+					  <ul>This is a group of nodes configured to act as a single network. The grouping provides flexibility and redunancy if a node is not operating. The nodes can communicate via the internet but can also communicated via radio waves.</ul>
+			           	<p class="font-weight-bold">Deployments</p>
+					  <ul>The activities assocaited with making a software system available to end users</ul>
+			           	<p class="font-weight-bold">Latency-Sensitive</p>
+					  <ul>The amount of time between when you tell a system to do something and when the system does it. </ul>
+			           	<p class="font-weight-bold">High-Volume </p>
+					  <ul>In terms of data, high-volume is relative to the data being stored or tracked. For some applications, a high-volume of data could be gigabytes while for others high-volume could be terabytes. </ul>
+			           	<p class="font-weight-bold">Mission-Critical</p>
+					  <ul>These systems are required in order for the company to operate as usual. </ul>
+			           	<p class="font-weight-bold">Turnkey Application</p>
+					  <ul>A solution that includes everything necessary to run the application as soon as it is setup.</ul>
+			           	<p class="font-weight-bold">Apache Tomcat</p>
+					  <ul>A web server specifically built for Java programs.</ul>
+			           	<p class="font-weight-bold">Middleware</p>
+					  <ul>These are pieces of software that sit between the back-end and the front-end of an application. There are many piece of middleware with the most common being web servers and application servers</ul>
+			           	<p class="font-weight-bold">RabbitMQ</p>
+					  <ul>This is an open-source message queuing platform.</ul>
+			           	<p class="font-weight-bold">Message queuing</p>
+					  <ul>When some software programs run, they generate messages which are used to start and end particular processes in the program. The types of messages can be anything from a progress output that a user can see in the UI to a process alerting it is finished and the next process should start.</ul>
+			           	<p class="font-weight-bold">Protocol based</p>
+					  <ul>Protocols are a systems of rules used to govern how different pieces of instrastructure are able to interact with each other.</ul>
+			           	<p class="font-weight-bold">Scale</p>
+					  <ul>In technical terms, this is the ability to easily adapt to more or less resourcing needs based on demand such as user counts or processing requests.</ul>
+				      </div>
+				    </div>
+				  </div>
+				</div> 
+			      </div>
+			      </div>     
+			      <div id="section2-2">    
+			        <h1 class="text-center">Private and Hybrid Cloud - Products</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Cloud Foundation</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Integrated cloud infrastructure and management services for private and public cloud</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Cloud on AWS</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Consistent vSphere-based infrastructure delivered on AWS</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Business-Critical Apps</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Consistent infrastructure and operations for your critical workloads, including: Microsoft SQL Server, Oracle, and SAP</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Cloud Provider Platform</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Portfolio of private and hybrid cloud services delivered by VMware partners</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Cloud Director Availability</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Cloud-based disaster recovery services that VMware Cloud Providers can offer their customers</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Cloud on Dell EMC</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Fully-managed VMware Cloud experience deployed on a Dell EMC VxRail appliance</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Cloud on AWS Outpost</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Fully-managed VMware Cloud experience in your data center</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Cloud Verified Partners</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Cloud providers delivering the full power of VMware Cloud infrastructure</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Cloud Director</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Leading cloud service delivery platform for secure, differentiated and elastic hybrid cloud services</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Cloud Director service</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Integrated cloud infrastructure and management services for private and public cloud</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+				</div>
+			      <div id="section3-2">         
+			        <h1 class="text-center">Hyperconverged Infrastructure - Products</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Cloud Foundation</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Integrated cloud infrastructure and management services for private and public cloud</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">NSX Data Center</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Network and security virtualization platform</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vRealize Suite</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Cloud system management platform</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Dell EMC VxRail</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Turnkey hyperconverged infrastructure appliance with full VMware integration</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vSAN</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Flash-optimized, vSphere-native storage for private and public cloud</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vSphere</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Efficient and secure compute virtualization</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vCenter Server</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Centralized platform for controlling your vSphere environments</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+			      </div>      
+			      <div id="section4-2">         
+			        <h1 class="text-center">Cloud Management - Products</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vRealize Suite</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Hybrid cloud management platform for building apps securely and consistently in any cloud</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vRealize Operations</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Unified management platform for planning and scaling SDDC and multi-cloud infrastructure</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vRealize AI</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Platform for the self-driving data center that uses reinforcement learning to continuously optimize your infrastructure</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vCloud Suite</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Enterprise-ready private cloud software that combines the vSphere hypervisor and vRealize Suite</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vRealize Log Insight</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Intelligent log management and analytics tool</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Integrated OpenStack</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Distribution that runs enterprise-grade OpenStack on top of VMware infrastructure</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vRealize Automation</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Software to accelerate the delivery of IT services with automation and pre-defined policies</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vRealize Business for Cloud</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Application providing cloud cost analysis, consumption metering, and business insights</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Cloud Health</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Optimize and govern financial, operational, and security management in your multi-cloud environment</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vRealize Code Stream</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Tool for software delivery automation and troubleshooting with release pipelines and analytics</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+				</div>
+				<div id="section5-2">         
+			        <h1 class="text-center">Multi-Cloud Operations - Products</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">CloudHealth</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Optimize and govern financial, operational, and security management</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware HCX</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">App mobility and infrastructure hybridity across any-to-any vSphere environment</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vRealize Network Insight Cloud</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">App-centric security and network visibility delivered as-a-service</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Site Recovery</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">On-demand disaster recovery as-a-service (DRaaS)</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">SecureState</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Real-time insights for proactive management of cloud security and compliance risks</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vRealize Automation Cloud</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Seamless multi-cloud automation and governance</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vRealize Log Insight Cloud</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Real-time visibility into infrastructure and app logs across clouds</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Cloud Marketplace</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">A rich ecosystem of third-party solutions and services designed and tested to run on VMware-based clouds.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+				</div>
+				<div id="section6-2">         
+			        <h1 class="text-center">Virtual Cloud Networking - Products</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">NSX Cloud</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Hybrid cloud networking and security</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">NSX Distributed IDS/IPS</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Advanced threat detection engine purpose-built to detect lateral threat movement on east-west network traffic</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Tanzu Service Mesh</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Enterprise-class service mesh technology to connect and protect your microservices on multi-cluster Kubernetes</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Service-Defined Firewall</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Internal firewall that protects both workloads and east-west traffic</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">NSX Data Center</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">L2-L7 network and security virtualization platform</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">NSX Advanced Load Balancer</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Multi-cloud load balancing, web application firewall, and application analytics</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vRealize Network Insight</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">App-centric security and network visibility</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware SD-WAN by VeloCloud</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Platform to access cloud services, private data centers, and SaaS-based applications</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+				</div>
+				<div id="section7-2">         
+			        <h1 class="text-center">Intrinsic Security - Products</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">AppDefense</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Workload protection embedded in the hypervisor and distributed across your entire environment</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">NSX Intelligence</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Distributed analytics engine that provides automated security policy recommendations & audit trail of security policies</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Workspace ONE</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Digital workspace platform that enables Zero Trust</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Carbon Black EDR</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">On-premises endpoint detection and response (EDR) for threat hunting and incident response</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">NSX Distributed IDS/IPS</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Advanced threat detection engine purpose-built to detect lateral threat movement on east-west network traffic</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">SecureState</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Real-time insights for proactively managing cloud security and compliance risks</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Carbon Black Cloud</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Cloud-native endpoint protection platform that helps prevent, detect, and respond to cyberattacks</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Carbon Black App Control</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">On-premises app control and critical infrastructure protection</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+				</div>
+				<div id="section8-2">         
+			        <h1 class="text-center">Digital Workspace - Products</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Workspace ONE</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Intelligence-driven digital workspace platform that delivers and manages any app on any device</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Workspace ONE Intelligence</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Insights, app analytics, and automation for your entire digital workspace</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Workspace ONE Assist</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Digitally transform employee experience with remote support</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Workspace ONE Intelligent Hub</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Securely stay connected and be productive from anywhere on any device</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Workspace ONE UEM Powered by Airwatch</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Unified endpoint management (UEM) technology that powers Workspace ONE</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Workspace ONE Intelligence for Consumer Apps</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Improve app performance and user experience on your mobile apps.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Workspace ONE Access</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Faster, more secure user experience for your digital workspace</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Workspace ONE Productivity Apps</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Deliver consumer simple, enterprise secure productivity apps</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+				</div>
+				<div id="section9-2">         
+			        <h1 class="text-center">Desktop & App Virtualization - Products</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Horizon 7</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Leading platform for managing virtual desktops (VDI), apps, and online services</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Horizon Cloud</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Flexible cloud platform for hosting virtual desktops and apps</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">NSX for Horizon</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Virtual desktop infrastructure (VDI) networking solution with policies that dynamically follow desktops</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vRealize Opertaions for Horizon</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Monitoring and reporting tool to manage Horizon and XenDesktop/XenApp environments</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Horizon Apps</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Unified workspace for published, SaaS, and mobile apps</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">App Volumes</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Real-time application delivery software with lifecycle management</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vSAN for Horizon</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">VDI storage solution with a number of pre-configured appliances optimized for Horizon, including vSAN ReadyNodes and Dell EMC VxRail</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">ThinApp</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Agentless application virtualization solution that isolates apps from their underlying operating systems to eliminate conflict and streamline delivery and management</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+				</div>
+				<div id="section10-2">         
+			        <h1 class="text-center">Compute Virtualization - Products</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vSphere</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Efficient and secure compute virtualization platform for hybrid cloud</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vSphere Hypervisor</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Free, bare-metal hypervisor that virtualizes servers</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Cloud Provider Pod</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Automated and tested Software-Defined Data Center for VMware Cloud Providers</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vCenter Server</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Centralized platform for controlling your vSphere environments</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vCenter Converter</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Software that transforms Windows- and Linux-based physical machines into virtual machines</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+				 </div>
+				<div id="section11-2">         
+			        <h1 class="text-center">Storage & Availability - Products</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vSAN</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Flash-optimized, vSphere-native storage for private and public cloud</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Site Recovery Manager</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Fast and reliable disaster recovery software</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Site Recovery</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">On-demand disaster recovery as a service (DRaaS)</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Virtual Volumes</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Industry-wide framework that streamlines storage operations and offers freedom of choice</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+				 </div>
+				<div id="section12-2">   
+				<h1 class="text-center">Telco Cloud</h1>
+				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">vCloud NFV</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Multi-tenant platform with compute, storage, networking, management, and operations capabilities</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Uhana by VMware</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">AI-based RAN analytics for mobile network operators</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Smart Assurance</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Automated service assurance for physical and virtual network management</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">VMware Integrated OpenStack Carrier Edition</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Carrier-grade OpenStack solution with the fastest path to a fully operational environment</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+  				  <div class="text-left" style="padding-left:30px;">
+			           <p class="font-weight-bold">Telco Cloud Automation</p>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">VMWare Description:</ul>
+					<ul style="margin-top:-10px;">Orchestrate and automate the management of any network function and service cross any network and any cloud</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">What It Means:</ul>
+					<ul style="margin-top:-10px;">This is a centralized application that allows a single person or group to manage multiple clouds at once. Managing multiple of clouds can be difficult to monitor, apply consistent external security measures, shift hardware resources as necessary, setup new environments, and grant internal employee access requests. By allowing companies to preform all these actions in one place, it makes it easier and faster for the development team to do their jobs.</ul>
+				    <ul class="font-weight-bold" style="margin-top:-10px;">Who Uses It:</ul>
+					<ul style="margin-top:-10px;">This would primarily be used by DevOps folks. The job titles of someone using this could be anything from Site Reliability Engineers and Network Engineers to Security Engineers</ul>
+				  </div>
+				 </div>
+			    </div>
+			  </div>
+			</div>
+
+		</body>
+</div>			 
+
+	</div>
+
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+</html>
+{% endblock %}

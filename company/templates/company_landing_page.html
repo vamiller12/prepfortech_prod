@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+    .w3-sidebar{    
+    position: fixed;
+    top: 53px;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    overflow:auto;}
+</style>
+
+<body>
+
+<div id="page">
+<div class="w3-sidebar w3-bar-block w3-light-grey">
+  <div class="w3-container">
+    <h4>Company Explorer</h4>
+  </div>
+  <button class="w3-button w3-block w3-left-align"> <a href="{% url 'company_overview' company.pk%}">Company Overview</a></button>
+  <div id="Overview" class="w3-bar-block w3-hide w3-white w3-card-4">
+  </div>
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFuncFin()">Financials</button>
+  <div id="Financials" class="w3-bar-block w3-hide w3-white w3-card-4">
+    <a href="{% url 'annual_reports' company.pk%}" class="w3-bar-item w3-button">Annual Reports</a>
+    <a href="{% url 'stock_chart' company.pk%}" class="w3-bar-item w3-button">Stock Chart</a>
+    <button class="w3-button w3-block w3-left-align" onclick="RatioFunc()">Ratios</button>
+    <div id="RatioOptions" class="w3-dropdown-content w3-bar-block w3-white w3-card-4">
+      <a href="{% url 'fin_ratios' company.pk%}" class="w3-bar-item w3-button">Standarad Ratios</a>
+      <a href="{% url 'fin_trends' company.pk%}" class="w3-bar-item w3-button">Company Trends</a>
+    </div>
+    <!-- <a href="{% url 'fin_ratios' company.pk%}" class="w3-bar-item w3-button">Financial Ratios</a> -->
+  </div>
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFuncProd()">Product Breakdown</button>
+  <div id="Product" class="w3-bar-block w3-hide w3-white w3-card-4">
+    <a href="{% url 'product_line' company.pk%}" class="w3-bar-item w3-button">Product Lines</a>
+    <a href="{% url 'product_spec' company.pk%}" class="w3-bar-item w3-button">Product Catalog</a>
+  </div>
+  <button class="w3-button w3-block w3-left-align"> <a href="{% url 'productflashcards' company.pk%}">Product Flashcards</a></button>
+  <div id="ProductFlash" class="w3-bar-block w3-hide w3-white w3-card-4">
+  </div>
+</div>
+  
+</div>   
+</body>
+<script>
+function myAccFuncFin() {
+  var x = document.getElementById("Financials");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+function myAccFuncProd() {
+  var x = document.getElementById("Product");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+function RatioFunc() {
+  var x = document.getElementById("RatioOptions");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+</script>
+{% endblock %}

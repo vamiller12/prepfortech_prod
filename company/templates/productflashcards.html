@@ -1,0 +1,36 @@
+{% include 'company_landing_page.html' %}
+<html>
+ <body>
+ <div class=container1>
+	<ol class="breadcrumb my-4">
+        <li class="breadcrumb-item">{{company.companyName}}</li>
+        <li class="breadcrumb-item active">{{company.companyName}} Flashcards</li>
+    </ol>
+  <style>
+    .container1{    
+    position: relative;
+    left: 210px;
+    width: 80%;
+    height: 100%;}
+
+  </style>
+<h2 align="center">Product Line Vocab</h2>
+  <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Product Line</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+  	 {% for row in prod_lines %}
+   		    <tr>
+		        <td><a href="{% url 'flash' pk=company.pk pl=row.pk%}">{{ row.product_line }}</td>
+  		      <td>Hardware/Software</td>
+ 		     </tr>
+ 	   {% endfor %} 
+	     </tbody>
+      </table>
+    </div>
+  </body>
+</html>

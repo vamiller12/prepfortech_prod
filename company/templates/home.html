@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+<body>
+  <div class="container">
+    
+    <header class="jumbotron my-4" style="background-image: url({% static 'img/papyrus.png' %})">
+      <h1 class="display-3">Welcome to PrepForTech!</h1>
+      <p class="lead">Tired of feeling lost when it comes to tech lingo? Want to learn about the tech space but don't know how to get started? Good news -- You've come to the right place!</p>
+    </header>
+
+    
+    <div class="row text-center">
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'img/research-home-page.png' %}" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Company Research</h4>
+            <p class="card-text">Get an in-depth view of each tech companies product lines, financials, and test your knowledge.</p>
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'company_research_board' %}" class="btn btn-primary">Get Started!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'img/eli5-home-page.jpg' %}" alt="">
+          <div class="card-body">
+            <h4 class="card-title">ELI5</h4>
+            <p class="card-text">Ever wonder what the jargon means or why it exists? Let us explain in a way that makes sense.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Get Started!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'img/test-home-page.png' %}" alt="" >
+          <div class="card-body">
+            <h4 class="card-title">Test My Knowledge</h4>
+            <p class="card-text">Feeling confident in your newly learned tech lingo? Test your knowledge to re-enforce your understanding.</p>
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'quiz_index' %}" class="btn btn-primary">Get Started!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="{% static 'img/dict-home-page.png' %}" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Word Lookup</h4>
+            <p class="card-text">Quickly search and understand jargon in seconds.</p>
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'dictionary' %}" class="btn btn-primary">Get Started!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock %}
