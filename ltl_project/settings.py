@@ -23,10 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7-)b&mo$6jjh6y+_ow^v47&=c6m3&kd-=kzryw1@q3+=+u&^5*'
-
+SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -84,9 +83,12 @@ WSGI_APPLICATION = 'ltl_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
 
-
-DATABASES = { 'default': dj_database_url.config(default='mysql://admin:inssdfHL4vi3546755fU01Ia@learnthatlingodb.c4rlek7ovrwp.us-east-2.rds.amazonaws.com:3306/learnthatlingodb') }
 
 
 # Password validation
