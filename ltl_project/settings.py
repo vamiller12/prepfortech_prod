@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -83,16 +84,9 @@ WSGI_APPLICATION = 'ltl_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-	'NAME' : 'learnthatlingodb',
-	'USER': 'admin',
-	'PASSWORD' : 'inssdfHL4vi3546755fU01Ia',
-	'HOST': 'learnthatlingodb.c4rlek7ovrwp.us-east-2.rds.amazonaws.com',
-	'PORT': '3306',
-    }
-}
+
+
+DATABASES = { 'default': dj_database_url.config(default='mysql://admin:inssdfHL4vi3546755fU01Ia@learnthatlingodb.c4rlek7ovrwp.us-east-2.rds.amazonaws.com:3306/learnthatlingodb') }
 
 
 # Password validation
