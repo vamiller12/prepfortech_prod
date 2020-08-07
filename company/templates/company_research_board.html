@@ -6,7 +6,12 @@
     <meta charset="utf-8">
     <title>Company Board</title>
   </head>
+<style>
+  #container1{position: relative;
+    top: 53px;}
+</style>
   <body>
+  <div id=container1>
     <div class="container">
       <ol class="breadcrumb my-4">
         <li class="breadcrumb-item active">Company Research</li>
@@ -24,7 +29,7 @@
   	 {% for row in company %}
    		     <tr>
 		        <td><a href="{% url 'company_specific' row.pk%}">
-            {{ row.companyName }}
+            {{ row.companyName }}</a>
           </td>
   		      <td>{{ row.industry }}</td>
     		    <td>{{ row.headquarters }}</td>
@@ -34,6 +39,7 @@
 	     </tbody>
       </table>
     </div>
+  </div>
   </body>
 </html>
 {% endblock %}

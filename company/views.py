@@ -51,13 +51,13 @@ def financial_trends(request, pk):
 @login_required
 def product_lines(request, pk):
     company = get_object_or_404(Company, pk=pk)
-    prod_lines = Product_Lines.objects.filter(company_main_id=pk)
+    prod_lines = Product_Lines.objects.filter(company_main_id=pk).order_by('id')
     prod_lines_vocab = Product_Line_Vocab.objects.filter(product_line__company_main_id =pk).values('term__term','term__definition','product_line__product_line')
     return render(request, 'product_line.html', {"company": company, "prod_lines":prod_lines, "prod_lines_vocab":prod_lines_vocab} )
 @login_required
 def product_spec(request, pk):
     company = get_object_or_404(Company, pk=pk)
-    prod_lines = Product_Lines.objects.filter(company_main_id=pk)
+    prod_lines = Product_Lines.objects.filter(company_main_id=pk).order_by('id')
     prod_spec = ProductSpecific.objects.filter(parent_company_id=pk).values('product_name','parent_product_line__product_line','product_line2','company_desc','friendly_desc' )
     prod_spec_vocab = Product_Spec_Vocab.objects.filter(specific_product__company_main_id =pk).values('term__term','term__definition','specific_product__product_line')
     return render(request, 'product_specific.html', {"company": company, "prod_spec":prod_spec, "prod_lines":prod_lines, "prod_spec_vocab":prod_spec_vocab} )
