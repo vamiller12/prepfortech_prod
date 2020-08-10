@@ -64,7 +64,7 @@ def product_spec(request, pk):
 @login_required
 def productflashcards(request, pk):
     company = get_object_or_404(Company, pk=pk)
-    prod_lines = Product_Lines.objects.filter(company_main_id=pk)
+    prod_lines = Product_Lines.objects.filter(company_main_id=pk).order_by('id')
     prod_spec = ProductSpecific.objects.filter(parent_company_id=pk).values('product_name','parent_product_line__product_line','product_line2','company_desc','friendly_desc' )
     categories = Product_Spec_Vocab.objects.filter(specific_product__company_main_id =pk).values('term__term','term__definition','specific_product__product_line')
     return render(request, "productflashcards.html", {'company':company, 'prod_lines': prod_lines})

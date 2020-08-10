@@ -13,12 +13,27 @@
     width: 80%;
     height: 100%;}
 
+    .widgetmain{text-align:left;
+        overflow-y:auto;
+        overflow-x:hidden;
+        width:1000px;
+        background-color:#transparent;
+        border:3px solid #333333;}
+
 </style>
-<div id="page-content" align="left">
-<h4>Company Bio</h4>
-<p>{{company.overview}}</p>
-<h4>Company Website</h4>
-<a href='{{company.companyURL}}' style="color: #0000FF">{{company.companyURL}}</a>
-<h4>Competitors</h4>
-<p>{{company.competitors}}</p>
+<div id="competitors" class="card" align="left">
+<div class="card-header">The Dope Sheet</div>
+<div class="card-body">
+    <h4>Company Bio</h4>
+    <p>{{company.overview}}</p>
+    <h4>Company Website</h4>
+    <a href='{{company.companyURL}}' style="color: #0000FF">{{company.companyURL}}</a>
+    <h4 class="card-title">Competitors</h4>
+    <p class="card-text">{{company.competitors}}</p>
 </div> 
+</div>
+<div id="company-news" class="card" align="left">
+<div class="card-header">Recent News</div>
+<div class="card-body">
+<h4>{{ company.companyName}} In the News</h4>
+</div>
