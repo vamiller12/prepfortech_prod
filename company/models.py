@@ -11,6 +11,8 @@ class Company(models.Model):
 	ownership = models.CharField(max_length=100, default='public')
 	companyURL = models.CharField(max_length=100, default='www.google.com')
 	competitors = models.CharField(max_length=100, default='Red Hat')
+	is_draft = models.BooleanField(default=True)
+	fiscal_year_end = models.CharField(max_length=100, default='Jan 1 2020')
 	overview = models.CharField(max_length=1000, default='Red Hat')
 
 	def __str__(self):

@@ -32,7 +32,7 @@ def company_overview(request, pk):
 @login_required
 def stock_chart(request, pk):
     company = get_object_or_404(Company, pk=pk)
-    stock_chart = get_object_or_404(Financials_StockChart, pk=pk)
+    stock_chart = get_object_or_404(Financials_StockChart, company_name_id=pk)
     return render(request, 'stock_chart.html', {"company": company, "stock_chart":stock_chart} )  
 @login_required
 def financials_annual_reports(request, pk):

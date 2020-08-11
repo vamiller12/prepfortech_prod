@@ -27,6 +27,7 @@
         </thead>
         <tbody>
   	 {% for row in company %}
+      {% if row.is_draft == 0 %}
    		     <tr>
 		        <td><a href="{% url 'company_specific' row.pk%}">
             {{ row.companyName }}</a>
@@ -35,6 +36,8 @@
     		    <td>{{ row.headquarters }}</td>
    		      <td>{{ row.employee_count }}</td>
  		       </tr>
+        {% else %}
+        {% endif %}
  	   {% endfor %} 
 	     </tbody>
       </table>
