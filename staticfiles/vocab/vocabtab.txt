@@ -1,0 +1,146 @@
+Term	Definition	Context
+Provision	"Provisioning is the process of setting up the development infrastructure. During this process, technical specifications (size, speed, etc.) for equipment and resourcing is determined. The final step is to make the new intracsture available to users and systems."	
+Kubernetes	"Kubernetes is the backbone of many container deployments. Simply put, it is an open-source platform that makes it easy to run and maintain multiple applications with a single system"	
+Containers	"A container is a piece of software that enables users to keep their work seperate from existing work. The container sits on top of the existing hardware allowing users to put multiple containers on a single piece of hardware. Containers are like Tupperware. Instead of having to purchase a new fridge for each meal you want to store, you store food in containers so it doesn't affect other food in the fridge. Software containers are no different. "	
+Deployments	The activities assocaited with making a software system available to end users	
+The Cloud	"The cloud consists of servers, storage, and networking devices that allow people and companies to store their data and run their applications virtually from a central location (usually a data center). "	"At the highest level, the cloud is a replacement for having to carry USB and CD-ROM's around when you want to share data. The allows companies to be flexible and more cost effective with their hardware needs. Instead of having to purchase expensive equipment, they can rent the exact hardware infrastructure they need and only pay for it as long as they want to use it. For accounting purposes, cloud useage has switched hardware needs from capital expenditures to operating expenses which a company may find advantageous for tax purposes. "
+DevOps	Focuses on combining development and operations procedures to help with faster and easier software deployment	
+Site Reliability Engineer	"Responsible for ensuring the infrastructure and software operations such as maintenance, monitoring, and issue resolution functions are complete."	
+Network Engineer	Responsible for implementing and maintaining the systems' networks.	
+Security Engineer		
+Software components	"These are parts of the application that are split into smaller sections to reduce complexity and making maintence, future development, and deployment easier."	
+Software Applications	Any grouping of code built for someone or something to use it.	
+Open-source	This means free and accessible by anyone. Much of software is open-sourced which has allowed software to increase in quality and for the rapid adoption of new technology.	"Python libraries are an example where someone had to write the code to make the functions in the library work, and now anyone who loads that library can use that technology without having to reinvent the wheel each time."
+Push updates	When the software automatically updates without the user having to do any work.	
+Reporting layer	Commonly refered to as user-facing tool used to display and visualize the data within the system.	
+Private Cloud	This means that the company using the cloud infrastructure is the only company using that infrastructure. The company can either own all the infrastrucure on-premises or they can be renting the infrasture from a third party. This allows for complete customization control as the company must decide on exactly how to configure the instructure and own the maintence process. The customization piece is mostly important for security and performance needs. Almost all production systems are run in a private cloud. This model is less-scalable than the public cloud since the infrastrucutre they need cannot be allocated on a moments notice.	Production applications are run 
+Public Cloud	This means that the company using the cloud infrastructure is not the only company using those cloud devices (software/hardware). This provides companies with flexibility to scale-up and down with their instructure needs as they need it and puts the burden of maintaining the infrastrucutre on the cloud service provider. This is commonly used for less secure needs in the early stages of the development lifecycle.	"The most common public clouds are Amazon AWS, Microsoft Azure, and Google Cloud.  "
+Hybrid Cloud	This is a combiniation of a private and public cloud. Companies utilize this method for different applications based on the applications complexity and importance to the organization.	
+Edge Cloud		
+Workload	The amount or a unit of work assigned to a machine	
+API	"An API is the way to transfer data between databases and application  layers. An API has four main actions: GET, POST, UPDATE, DELETE."	"When you are on Yelp and you look at the location feature, you are actually seeing Google Maps application. The way Yelp interacts with Google Maps in order to populate that feature on the Yelp website is though Google Maps API. "
+API - POST	This is the API action assocaited with entering new data into the database.	"When you are on social media and want to add new content, you enter some data (words, images, videos, etc.) through a form which is then stored in the database so other can access it. That is actually why it is called 'posting' on social media."
+API - GET	This is the API action associated with retrieving information from the database. 	"When you search for almost anything on a webiste (Google, Yelp, Nike, etc) you are asking the webpage to perform a GET request for the data you are asking for from the internal company database."
+API - PUT	This is the API action associated with modifying or updating a piece of information in a database.	
+API - DELETE	This is the API action associated with deleting information from a database.	
+Elastic Infrastructure	These work within the public cloud framework which allow IT teams to adjust and scale their infrastructure as needed for the business purposes.	
+high-volume 	"In terms of data, high-volume is relative to the data being stored or tracked. For some applications, a high-volume of data could be gigabytes while for others high-volume could be terabytes. "	
+latency-sensitive	Latency is the amount of time between when you tell a system to do something and when the system does it. 	"For highly transactional events, such as purchasing stocks or video conferencing, any lag between when you preform an action and when the system transmits the action can lead to lost money or a poor conversation. "
+mission-critical	These systems are required in order for the company to operate ordinarily. 	"A modern example is the electronic medical record system working for a hospital or clinic. Without that piece of software preforming, the hospital will not be able to operate their business as ordinary."
+in memory design	"An in-memory design means the data is not stored on a traditional disc, but is all stored in RAM. This leads to the data being returned more quickly when the user or the system asks for it. A noteable downside to many in-memory databases is if the database loses power, all data is lost."	"Think about the first time you load a webpage. The webpage takes a little longer than you would like to populate but after it loads once, it is fast when you try to load it again. This is because part of your website is now stored in you web browser's memory. When it comes to loading data for reporting and analytics purposes, everyone want instantaneous access to all their data. However, the retrevial process for gathering data from when it is stored and presenting it to the user or application does take time. To make this process faster, in-memory databases do not store the data in a physical format (disc), only keeping the data in the easily accessible RAM."
+distributed systems	A system architecture where one system is made of many parts that are each have specific tasks and interact with each other.	
+distributed data management	A software architecture for managing data in a remote infrastructure or environment	
+Cloud-Native	These are applications that have been previously built using a cloud system. This means that the applications do not have to be mirgrated into the cloud.	
+K8	Industry slang for Kubernetes	
+Data Center	"A key piece to the cloud infrastructure that allows data to be stored and accessed remotely leading to economies of scale for businesses. This is typically a building that houses servers that can be connected to via the internet. Because this is the phyisical location that can be used as an access point for hosted information, data centers have a high level of physical security and might have confidential locations."	
+Scale	"In technical terms, this is the ability to easily adapt to more or less resourcing needs based on demand such as user counts or processing requests."	
+Downtime	"This is when the system is not able to be used or accessed by end users or other systems. In the contracting phase of software discusses, downtime is defined in terms of the systems."	
+5 9's	"This references having .99999 uptime for a system. For an application to maintain this, it can only be down for ~5 minutes a year."	"Uptime is a common metric that B2B software providers have in any contract. This contract feature is referred to as a Service Level Agreement (SLA). For systems that handle 100,000's of requests a second (think banks or the stock market) having any downtime can cost the company a money or lost reputation."
+clusters	A hardware architecture that refers to multiple servers all assigned to one system. This leads to easier architecture administration for the company and creates effective redundancy protocols for applications to ensure they have high uptime.	
+stack	"These are all the software components needed to create a platform to run an application. Stacks are defined for the type of data they are working with, the operating system the application is built to run on, the database that is going to store the data, and the programming langagues used."	
+continuous deployment	This is a software engineering approach with short cycles aimmed at producing software quickly. The software is then deployed automatically.	
+continuous delivery	This is a software engineering approach with short cycles aimmed to producing software quickly. The software is then deployed manually.	
+scalability	The process of adjusting hardware resources to meet the needs of the business.	
+vertical scalability	This is the ability to add hardware or software resources to existing hardware and software. 	This means that you can make your current hardware/software do more work or process faster without purchasing new hardware/software.
+horizontal scalability	This is the ability to add more machines to your existing setup.	This means that you can add more machines without having to reconfigure the existing machines (i.e. server farm)
+application runtime 	This relates to the configuration of the hardware and software that is necessary for the application to be able to function.	
+lightweight application	This is a relative term for the memory amount and processing power needed to store and run the program.	
+Java	A object-oriented programming language used commonly for web applications. 	
+object-oriented programming	A type of programming where developers build a program as a set of functions that rely on data being passed to them in order to perform an output.	
+function	A block of code written to transform or validate existing data for the purpose of using that data for something else. 	"This is done for simplicities sake. For example, if your dataset needs to be cleaned, you will have a function to remove special characters. When you find new characters that you want to remove, you can just edit the function and now have to alter the program text."
+client-server-architecture	Clients request services from a central server. This is a distributed architecture that is typically used for web architectures.	
+server	The combination of hardware and software components which create an environment to run an application.	
+Apache Tomcat	A web server specifically built for Java programs.	
+application server	A server built for the specific purpose of hosting one or many applications.	
+server farms	A collection of servers that are configured identically which provides scalability for fluxuating process demands. This is a pooled appoarch based on the principals of horizontal scaling.	"Instead of having to purchase big, powerful, expensive machines to handle unknown or cyclical demand for an application, smaller machines are able to be pooled which saves on costs and can be easily added/removed based on business needs."
+compiling code	Converting executable code into a program for the processor to be able to understand and run	
+binaries	These are code files that allow a program or application to be installed without the entire source code having to be complied.	"This is done for speed and storage purpasses. Instead of having to recompile the code for a program to work on your computer, you can just download the .bin file and the program will work."
+application binaries		
+spring runtime	This is a runtime specifically for Java environments.	
+OpenJDK	This is an open-source Java Development Kit used mostly for Linux.	Development kits are prebuilt functions that automate commonly used or difficult code statements so each developer does not need to write every line of code from scratch. An example is the sum function in in Microsfot Execel.
+JVM	This acronym stands for Java Virtual Machine. The virtual machines is responsible for hosting the runtime enviroment for Java applications.	
+middleware	These are pieces of software that sit between the back-end and the front-end of an application. There are many piece of middleware with the most common being web servers and application servers	Remember the last time you wanted to connect to a new printer but you had to install the driver first? That driver is a piece of a middleware that allows you to interact with the printer.
+RabbitMQ	This is an open-source message queuing platform.	"RabbitMQ is written in Erlong, which is the same language used to write WhatsApp. "
+message queuing	"When some software programs run, they generate messages which are used to start and end particular processes in the program. The types of messages can be anything from a progress output that a user can see in the UI to a process alerting it is finished and the next process should start."	
+protocol based	Protocols are a systems of rules used to govern how different pieces of instrastructure are able to interact with each other.	Protocols can be defined either by industry defined practices or can be business specifc based on a companies needs  
+asynchronous	"In software terms, asynchronous or 'async' processes mean that they have to finish before the next process can start. "	"Async processes exist to make sure a certain order is followed when the program runs. If there is a calculation performed during the process, you would want to make sure that the calculcation completes before the program uses the calculation in other calculations. "
+Hyperconverged Infrastructure	"Consists of virtualized computing, storage, and networking."	
+software-defined data center	This is the bundled approach to a data center where all the important pieces that make up a data center are offered together. 	This is why AWS exists.
+bandwidth	Relates to the volume of data that can be transferred at one time. It is normally quoted as a rate.	
+I/0	Relates to the input and output or read and write operations preformed during data transfers.	
+disc	This is the physical location that data is stored on in a server.	
+RAM (Random Access Memory)	"This is computer memory that can store data in any order, interchangably. This memory type is volatile and is useful in quickly retrieving data. Often, this memory sits on top of a disc and only stores the most recent data pulled from the disc."	
+"CPU (Central Processing Unit, Core)"	These preform the processing for a computer program. The number of CPU's a machine has is the limit to the number of concurrent actions that machine can perform	
+x86 servers	Server architecture based on Intel microprocessors. This type of server is commonly found in a data center. 	
+migrate	"This is the process of moving something from one place to the another. It can relate to moving code from different development environments, moving from physical infrastructure to cloud infrastructure, or moving data from one storage location to another."	
+host	"In order to make a website (or other application) available on the internet, the content and underlying code needs to be installed on a server so that it can be accessed via the internet. "	"Hosting works much in the same way that hosting a party works. You, as the host, have people to your house and provide the food, etc. Software hosting is the same where the server plays the role of the host and provides all the necessary devices and components for you. "
+extend 		
+cold migration	Migrating data from a virtual machine that in not running but still has power running to it. This means anything using that virtual machine will not be accessible to anyone trying to access it. This is done so there is no data discrepcancy between the source and target of the migration.	
+warm migration	Migrating data from a virtual machine that is currently active. This is usually very fast but may cause data inaccuracies between the source and the target as anything on the VM is able to be reached.	
+seemless connectivity	This is an architecture and thought for mobile devices so you never have to reconnect to IoT devices once you have connected the first time.	
+diaster recovery	This is part of the business continuity plan that includes procedures and tools to recover data or infrastructure that is compromised.	
+as a service	"This is the consulting version of software programs. Instead of having a company buy the infrastructure and create the software, they purchase that from a third-party on a contract basis. "	
+multi-tenant	"This refers to multiple users on the same infrastructure, similar to a public cloud."	
+asset-light	"This is a business decision companies are making usually involving renting infrastructure resources instead of purchasing them. This has to do with smaller capital expernse, larger operating expenses, and more ability to shift to new technology as it becomes available."	
+geo expansion	"This relates to businesses looking to expand to new locations, cities, regions, or countries and how their infrastucture can support those needs."	
+bare metal	"These are physical servers that have a virtual machine installed on them for the purpose of only having one client, or tenant, on the server. These servers do not share tenants, making them customizable to that specific tenants needs."	
+Networking	How data is transferred to between application and the storage and compute infrastructure	
+L2-L7 networking	These represent the the 7 layers of the networking protocol as defined by the OSI model.	
+OSI Networking Model	"This is a traditional networking model that has 7 levels. The seven levels are the physical layer, the data link layer, the network layer, the transport layer, the session layer, the presentation layer, and the application layer."	
+microservices	"This is a software architecture design choice based on making an application as a collection of small services. Instead of having one major code base (often described as a monolith) that is responsible for the entire appliction, the application is split into logical sections (services) usually based on application function. "	"This allows for faster development, testing, and releasing of new software. Since the service is usually small enough to be owned by one team, that team becomes extermely familiar with the code which allows them to be productive and limit errors and issues."
+turn key application	A solution that includes everything necessary to run the application as soon as it is setup.	This is like meal delivery companies who send all the ingredients and instructions so all you have to do is open the box and start cooking.
+logging	The process of recording actions within a program or system. Most recorded actions are decided on to monitor application health and support business needs.	"This is used as the basis for monitoring and some user analysis. For instance, capturing what is clicked on, whether an error occurs, how long the process takes to complete, how long a user stays on a page, etc. is all recorded through logging. "
+flash memory	A memory storage device that that does not need power to store data and can be earased and reprogrammed.	This is how a typical flash drive works. It does not need constant power to keep you data stored and you can easily add and remove items from the flash drive once you connect it to your computer. 
+HDD (Hard Disk Drive)	"The core storage device for many computers. Harddrives are where information for the computer is stored, and the disk is the physical location that is storing that data. "	"When you hear a spinning noise as you turn on your compute, that is your computer reading off the harddrive.  These are cheaper than SSD's, are slower for accessing and writing data, and can damage easily (this is one reason dropping your computer is bad idea)."
+SSD (Solid State Drives)	These are flash storage devices similar to flash drives that are used computers.	
+compute	This refers to how much work a machine can preform. 	
+storage	This refers to the amount of data that can be held in a piece of infrastructure.	
+storage virtualization	"Combining multiple phyiscal storage devices to appear as a single, large storage source."	
+KPI's	These are metrics that are decided on by the business that serve as signals for how different processes are performing.	
+pre-defined policies	These are rules that are already stated and can be reused when called upon.  	This points to the setup effort for the piece of infrastrucutre and the customization the infrastructure allows.
+governance	"The busiess and operational rules a company sets to ensure their systems function as expected and include areas such as safety, security, and maintainence."	
+security goverance	This is a set of operational processes and procedures made to ensure the software and data are secure.	
+marketplace	A place where a company or person can purchase goods or services from a third-party retailer online 	
+IDS	This is part of a cybersecurity process that is focused on determing and alerting if there has been a secuirty breach.	
+IPS	This is part of the cybersecurity process that is focsed on identifying threats and stopping them from happening.	
+Mesh Network	This is a group of nodes configured to act as a single network. The grouping provides flexibility and redunancy if a node is not operating. The nodes can communicate via the internet but can also communicated via radio waves.	
+Router	This is a device used to forward requests via the internet. Based on address of the information being transmitted the router determines the next place to send that information.	
+Switch	This is a device whose main purpose is to connect other devices within a computer network.	
+Service Defined firewall	A cybersecurity tool that specializes traffic monitoring based on the application that the tool is protecting.	
+firewall	These are the front-line of defense against cybersecurity threats. They work by acting as a gatekeeper for allowing internet traffic on a network. 	
+Load balancer	This is a device used to direct tasks within an application or system to resource pools for processing effeciency.	
+Software-Defined	"The ability to separate the operational, administrative, and control aspects of technical infrastrucutre and devices."	
+SD-WAN (Service Defined-Wide Area Network)	This is an architecture used for cloud computing that allows central control to direct traffic instead of having all traffic directed to a central data center for information and access.	
+endpoints	"Refers to the outter tendrons of the computer networking web. It is commonly your computer, phone, tablet, or other device that is the last piece in a network."	
+incident response	A set of tools and procedures that are used when hardware or software security has been compromised.	
+east-west traffic	This refers to internal data transmissions (traffic) within a data center. 	
+north-south traffic	This refers to the external data transfers into and out from a data center.	
+on-premises	"This means the hardware is stored at a company-owned location. Before the advent of the cloud, this was the primary way company's kept and hosted their infrastructure. "	
+hypervisor	Computer hardware that is responsbile for running virtual machines.	
+VDI (Virtual Desktop Infrastructure)	These are virtual machines specifically made to create and manage virtual desktops. 	
+SAN (Storage Area Network)	This is a networking device used to connect the application with the storage devices.	
+physical machines	Synomous with a bare metal server; it is a single tenant server.	
+IoT	Internet of Things. This is the broad term used to describe systems that users are able to communicate with via the internet.	Examples of IoT devices are Amazon's Alexa and Google Home.
+Machine Learning	The process of training a statistical model to recognize certain inputs based on data that has already been identified.	
+Artifical Intelligence	The board field of techonolgy that aims to have computer systems perform complex human tasks	
+RAN		
+Windows	An operating system built by Microsoft	
+Mac	An operating system built by Apple	
+Linux	An open-source operating system 	
+Operating System	"Software that takes care of everything on the computer. It manages the hardware, software, application, and operations of the computer allowing the user an easy interaction with the powerful machines"	
+Big Data		
+Blockchain		
+static file		
+remote static file		
+browser		
+web client		
+cache		
+local storage	"This is the cache in your web-browser. For websites without logins, this is a way to track how you use the system for business and user experience reasons."	
+redundancy	"Having more than one system so that is the main system fails, the application can still operate"	
+NAS (Network Attached Storage)		
+Node	Any connection point within a network that transmits information. 	
+runtime systems		
+end of life	This is when a company has stated they will no longer provide support or service for an existing application. 	"This is an important date as any vulnerbilities or defect that have not been addressed will never be addressed. So if a malicious user has discovered a security flaw in the software, they will be able to exploit that flaw knowing the owner of the software will not fix it."
+VPN (Virtual Private Network)		
+Out-of-the-Box		
+Storage Architecture		

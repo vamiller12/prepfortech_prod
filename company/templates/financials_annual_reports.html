@@ -25,29 +25,30 @@
 </div>
 <br></br>
 <div id="2018Report" class=" pdfobject-container" style ="display:none">
-	<embed class="pdfobject" 
-			{% with '/financials/annual_reports/'|add:company.companyName|add:'/2018 Annual Report.pdf' as annual_report %}
-  				src="{% static annual_report %}"
-			{% endwith %}
-			type="application/pdf" 
-			style="overflow: auto; width: 100%; height: 800px;">
+  <embed class="pdfobject" 
+      {% with 'financials/annual_reports/'|add:company.companyName|add:'/2018_Annual_Report.pdf' as annual_report %}
+          src="{% static annual_report %}"
+      {% endwith %}
+      type="application/pdf" 
+      style="overflow: auto; width: 100%; height: 800px;">
 </div>
 <div id="2019Report" class=" pdfobject-container" style ="display:none">
-	<embed class="pdfobject" 
-			{% with '/financials/annual_reports/'|add:company.companyName|add:'/2019 Annual Report.pdf' as annual_report %}
-  				src="{% static annual_report %}"
-			{% endwith %}
-			type="application/pdf" 
-			style="overflow: auto; width: 100%; height: 800px;">
+  <embed class="pdfobject" 
+      {% with 'financials/annual_reports/'|add:company.companyName|add:'/2019_Annual_Report.pdf' as annual_report %}
+          src="{% static annual_report %}"
+      {% endwith %}
+      type="application/pdf" 
+      style="overflow: auto; width: 100%; height: 800px;">
 </div>
 <div id="2020Report" class=" pdfobject-container" style ="display:none">
-	<embed class="pdfobject" 
-			{% with '/financials/annual_reports/'|add:company.companyName|add:'/2020 Annual Report.pdf' as annual_report %}
-  				src="{% static annual_report %}"
-			{% endwith %}
-			type="application/pdf" 
-			style="overflow: auto; width: 100%; height: 800px;">
+  <embed class="pdfobject" 
+      {% with 'financials/annual_reports/'|add:company.companyName|add:'/2020_Annual_Report.pdf' as annual_report %}
+          src="{% static annual_report %}"
+      {% endwith %}
+      type="application/pdf" 
+      style="overflow: auto; width: 100%; height: 800px;">
 </div>
+
 </div>
 </div>
 <script type="text/javascript">
