@@ -19,14 +19,14 @@
 <h1>{{company.companyName}} Annual Reports</h1>
 <br></br>
 <div class="row">
-  <div class="col-md-4"><button class="btn btn-info" onclick="Show2018()">2018 Report</button></div>
-  <div class="col-md-4"><button class="btn btn-info" onclick="Show2019()">2019 Report</button></div>
-  <div class="col-md-4"><button class="btn btn-info" onclick="Show2020()">2020 Report</button></div>
+  <div class="col-md-4"><button class="btn btn-info" onclick="Show2020()">{{company.fiscal_year_end}} Report </button></div>
+  <div class="col-md-4"><button class="btn btn-info" onclick="Show2019()">{{company.fiscal_year_end|add:"-1" }} Report</button></div>
+  <div class="col-md-4"><button class="btn btn-info" onclick="Show2018()">{{company.fiscal_year_end|add:"-2" }} Report</button></div>
 </div>
 <br></br>
 <div id="2018Report" class=" pdfobject-container" style ="display:none">
   <embed class="pdfobject" 
-      {% with 'financials/annual_reports/'|add:company.companyName|add:'/2018_Annual_Report.pdf' as annual_report %}
+      {% with 'financials/annual_reports/'|add:company.companyName|cut:" "|add:'/two_years_prior.pdf' as annual_report %}
           src="{% static annual_report %}"
       {% endwith %}
       type="application/pdf" 
@@ -34,7 +34,7 @@
 </div>
 <div id="2019Report" class=" pdfobject-container" style ="display:none">
   <embed class="pdfobject" 
-      {% with 'financials/annual_reports/'|add:company.companyName|add:'/2019_Annual_Report.pdf' as annual_report %}
+      {% with 'financials/annual_reports/'|add:company.companyName|cut:" "|add:'/prior_year.pdf' as annual_report %}
           src="{% static annual_report %}"
       {% endwith %}
       type="application/pdf" 
@@ -42,7 +42,7 @@
 </div>
 <div id="2020Report" class=" pdfobject-container" style ="display:none">
   <embed class="pdfobject" 
-      {% with 'financials/annual_reports/'|add:company.companyName|add:'/2020_Annual_Report.pdf' as annual_report %}
+      {% with 'financials/annual_reports/'|add:company.companyName|cut:" "|add:'/current_year.pdf' as annual_report %}
           src="{% static annual_report %}"
       {% endwith %}
       type="application/pdf" 

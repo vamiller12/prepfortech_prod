@@ -41,6 +41,12 @@ class Financial_Ratios(models.Model):
 	FY2019 = models.DecimalField(max_digits= 12, decimal_places=4)
 	FY2018 = models.DecimalField(max_digits= 12, decimal_places=4)
 
+class Fin_Trends(models.Model):
+	parent_company = models.ForeignKey(Company, related_name='financial_trends', on_delete=models.CASCADE)
+	ratio = models.CharField(max_length=1000) 
+	value = models.DecimalField(max_digits= 12, decimal_places=4)
+	fiscal_year = models.IntegerField() 
+
 class Twitter(models.Model):
 	company_trends_name = models.ForeignKey(Company, related_name='twitter', on_delete=models.CASCADE)
 	twitterURL = models.CharField(max_length=1000) 

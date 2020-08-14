@@ -1,0 +1,72 @@
+{% include 'company_landing_page.html' %}
+{% load financials_tags %}
+
+<div class=container1>
+	<ol class="breadcrumb my-4">
+        <li class="breadcrumb-item">{{company.companyName}}</li>
+        <li class="breadcrumb-item active">Financials - Company Trends</li>
+    </ol>
+<style>
+    .container1{    
+    position: relative;
+    top: 53px;
+    left: 210px;
+    width: 80%;
+    height: 100%;}
+</style>
+
+<div align="center">
+	<table class="table table-bordered">
+    			 <thead>
+    			 <tr align="center">
+   				     <th>Ratio</th>
+ 				     <th>FY{{company.fiscal_year_end}}</th>
+ 				     <th>FY{{company.fiscal_year_end|add:"-1" }}</th>
+ 				     <th>FY{{company.fiscal_year_end|add:"-2" }}</th>
+ 				  </tr>
+				  </thead>
+				  <tbody id="myTable">
+  					{% for ratio, value in ratio_table.items %}
+    					<tr>
+    					{% if company.fiscal_year_end == "2019" %}
+    						<td>{{ratio}}</td>
+    						<td
+						{% if value.2019 >= value.2018 %}
+						bgcolor="#98FB98"
+						{% else %}
+						bgcolor="#FFC0CB"
+						{% endif %}
+						> {{value.2019}} </td>
+						<td
+						{% if value.2018 >= value.2019 %}
+						bgcolor="#98FB98"
+						{% else %}
+						bgcolor="#FFC0CB"
+						{% endif %}
+						> {{value.2018}} </td>
+        					<td>{{value.2017}}</td>
+        				
+        				{% elif company.fiscal_year_end == "2020" %}
+        					<td>{{ratio}}</td>
+        						<td
+						{% if value.2020 >= value.2019 %}
+						bgcolor="#98FB98"
+						{% else %}
+						bgcolor="#FFC0CB"
+						{% endif %}
+						> {{value.2020}} </td>
+						<td
+						{% if value.2019 >= value.2018 %}
+						bgcolor="#98FB98"
+						{% else %}
+						bgcolor="#FFC0CB"
+						{% endif %}
+						> {{value.2019}} </td>
+        					<td>{{value.2018}}</td>
+        				{% endif %}
+        					
+    					</tr>
+  					{% endfor %}
+  				   </tbody>
+	</table> 
+
