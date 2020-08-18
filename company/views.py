@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Company, Financials_StockChart, Financial_Ratios, Product_Lines, Financial_Trends, ProductSpecific, Product_Line_Vocab,Product_Spec_Vocab, Vocab, Fin_Trends
+from .models import Company, Financials_StockChart, Financial_Ratios, Product_Lines, Financial_Trends, ProductSpecific, Product_Line_Vocab,Product_Spec_Vocab, Vocab, Fin_Trends, Fin_Ratios
 from django.contrib.auth.decorators import login_required
 import pandas as pd
 import numpy as np
@@ -49,7 +49,7 @@ def financial_trends(request, pk):
     company = get_object_or_404(Company, pk=pk)
     fin_trends = Financial_Trends.objects.filter(company_fin_trends_name_id=pk)
     return render(request, 'financial_trends.html', {"company": company, "fin_trends":fin_trends} ) 
-
+@login_required
 def fin_trends(request, pk):
     company = get_object_or_404(Company, pk=pk)
     trends = list(Fin_Trends.objects.filter(parent_company_id=pk).values())
@@ -57,6 +57,14 @@ def fin_trends(request, pk):
     for row in trends:
         ratio_table.setdefault(row['ratio'], {}).update({row['fiscal_year']: row['value']})
     return render(request, 'fin_trends.html', {"company": company, "trends":trends, "ratio_table": ratio_table} ) 
+@login_required
+def fin_ratios(request, pk):
+    company = get_object_or_404(Company, pk=pk)
+    ratios = list(Fin_Ratios.objects.filter(parent_company_id=pk).values())
+    ratio_table = {}
+    for row in ratios:
+        ratio_table.setdefault(row['ratio'], {}).update({row['fiscal_year']: row['value']})
+    return render(request, 'fin_ratios.html', {"company": company, "ratios":ratios, "ratio_table": ratio_table} ) 
 
 @login_required
 def product_lines(request, pk):
