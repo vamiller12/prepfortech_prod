@@ -2,13 +2,7 @@
 {% load static %}<!DOCTYPE html>
 {% block 'content' %}
 <head>
-	<script>type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"</script>
-	<script>type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"</script>
-	<script type="text/javascript" class="init">
-		$(document).ready(function() {
-			$('#dict-table').DataTable();
-		} );
-	</script>
+
 </head>
 <div class="container1">
 	<ol class="breadcrumb my-4">
@@ -28,12 +22,13 @@ height: 100%;}
 
 <div id="page-content" align="center">
 	<h2>Start Learning the Words You Need to Know!</h2>
-  		<p>Input the term you are looking for or expand any of the sections to get started.</p>  
-  		<div id="example_filter" class="dataTables_filter">
-  				<input type="search" class="form-control form-control-sm" placeholder="Search.." aria-controls="dict-table">
-  		</div>
-  		
-  	<br>
+<br></br>  		
+  <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
+    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search..." aria-label="Search" name="term_search">
+    <i class="fas fa-search" aria-hidden="true"></i>
+  </form>
+  <br>
+  <br>
 
 	<table id='dict-table' class="table">
         <thead class="thead-inverse">
@@ -47,7 +42,7 @@ height: 100%;}
   	 		{% for row in dictionary %}
    		     <tr>
 		        <td>{{ row.term}}</td>
-  		      	<td>{{ row.definition}}</td>
+  		      <td>{{ row.definition}}</td>
     		    <td>{{ row.useful_example}}</td>
  		       </tr>
  	   		{% endfor %} 

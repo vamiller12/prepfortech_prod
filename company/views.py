@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Company, Financials_StockChart, Financial_Ratios, Product_Lines, Financial_Trends, ProductSpecific, Product_Line_Vocab,Product_Spec_Vocab, Vocab, Fin_Trends, Fin_Ratios
+from .filters import DictionarySearchFilter
 from django.contrib.auth.decorators import login_required
 import pandas as pd
 import numpy as np
@@ -96,6 +97,10 @@ def flash(request, pk, pl):
 @login_required
 def dictionary(request):
     dictionary = Vocab.objects.all()
+    term_search = request.GET.get('term_search')
+    if term_search != '' and term_search is not None:
+        dictionary = dictionary.filter(term__icontains=term_search)
+
     return render(request, "dictionary.html", {'dictionary':dictionary})
 @login_required
 def eli5(request):

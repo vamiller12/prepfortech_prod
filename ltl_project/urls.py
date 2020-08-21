@@ -64,6 +64,6 @@ urlpatterns = [
     url(r'^eli5/eli5-server', views.eli5server, name='eli5server'),
 	url(r'^eli5/eli5-xaas', views.eli5xaas, name='eli5xaas'),
     url(r'^eli5/eli5-thecloud', views.eli5thecloud, name='eli5thecloud'),
-    path('admin/', admin.site.urls),
+    path('thingstochange/', admin.site.urls),
 
 ]
