@@ -84,3 +84,7 @@ class Product_Spec_Vocab(models.Model):
 class Product_Line_Vocab(models.Model):
 	product_line = models.ForeignKey(Product_Lines, related_name='prod_line_vocab', on_delete=models.CASCADE)
 	term = models.ForeignKey(Vocab, related_name='vocab_id', on_delete=models.CASCADE)
+
+class Company_Newsfeed(models.Model):
+	parent_company = models.ForeignKey(Company, related_name='company_news', on_delete=models.CASCADE)
+	rsslink = models.CharField(max_length=1000) 

@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Company, Financials_StockChart, Financial_Ratios, Product_Lines, Financial_Trends, ProductSpecific, Product_Line_Vocab,Product_Spec_Vocab, Vocab, Fin_Trends, Fin_Ratios
+from .models import Company, Financials_StockChart, Financial_Ratios, Product_Lines, Financial_Trends, ProductSpecific, Product_Line_Vocab,Product_Spec_Vocab, Vocab, Fin_Trends, Fin_Ratios, Company_Newsfeed
 from django.contrib.auth.decorators import login_required
 import pandas as pd
 import numpy as np
+import feedparser
 
 
 # Create your views here.
@@ -29,7 +30,13 @@ def company_specific(request, pk):
 @login_required
 def company_overview(request, pk):
     company = get_object_or_404(Company, pk=pk)
-    return render(request, 'company_overview.html', {"company": company} )
+    news = Company_Newsfeed.objects.filter(parent_company_id=pk).values()
+
+    for row in news:
+        url = row['rsslink']
+    feed = feedparser.parse(url) 
+    
+    return render(request, 'company_overview.html', {"company": company, 'news':news, 'feed':feed, 'url':url} )
 @login_required
 def stock_chart(request, pk):
     company = get_object_or_404(Company, pk=pk)

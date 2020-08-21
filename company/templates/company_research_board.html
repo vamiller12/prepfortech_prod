@@ -29,7 +29,7 @@
   	 {% for row in company %}
       {% if row.is_draft == 0 %}
    		     <tr>
-		        <td><a href="{% url 'company_specific' row.pk%}">
+		        <td><a href="{% url 'company_overview' row.pk%}">
             {{ row.companyName }}</a>
           </td>
   		      <td>{{ row.industry }}</td>

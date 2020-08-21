@@ -1,4 +1,7 @@
 {% include 'company_landing_page.html' %}
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
 <div class=container1>
 	<ol class="breadcrumb my-4">
         <li class="breadcrumb-item">{{company.companyName}}</li>
@@ -34,6 +37,23 @@
 </div>
 <div id="company-news" class="card" align="left">
 <div class="card-header">Recent News</div>
-<div class="card-body">
-<h4>{{ company.companyName}} In the News</h4>
+
+<div class="card-body border-secondary mb-3">
+    <h4>{{ feed.feed.title }}</h4>
+        {% if feed.entries %}
+        {% for entry in feed.entries %}
+            <div class=“card”>
+            <div class=“card-header”>
+            </div>
+            <div class=“card-body”>
+                <h5 class=“card-title”>Headline: {{entry.title|safe}}</h5>
+                <p class=“card-text”>Description: {{entry.description|safe}}</p>
+                <a href='{{entry.link|safe}}' class=“btn btn-primary”>Visit Link</a>
+            </div>
+            </div><p><small class="text-muted">Article Published: {{entry.published}}</small></p>
+
+        {% endfor %}
+        {% else %}
+ 
+        {% endif %}
 </div>
