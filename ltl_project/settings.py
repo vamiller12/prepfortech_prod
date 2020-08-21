@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'multichoice',
     'essay',
     'true_false',
-    'django_filters',
 ]
 
 MIDDLEWARE = [
