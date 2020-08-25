@@ -44,10 +44,10 @@
   {% if max_score %}
 
   <div>
-	<h2>{% trans "Your Test Results" %}</h2>
+	<h2 align="center">{% trans "Your Test Results" %}</h2>
 
-	<p class="lead">
-	  {% trans "You answered" %} {{ score }} {% trans "questions correctly out of" %} {{ max_score }}, {% trans "giving you" %} {{ percent }} {% trans "percent correct" %}
+	<p class="lead"><b>
+	  {% trans "You answered" %} {{ score }} {% trans "questions correctly out of" %} {{ max_score }}, {% trans "giving you" %} {{ percent }} {% trans "percent correct" %}</b>
 	</p>
 
 	{% if quiz.pass_mark %}
@@ -86,9 +86,7 @@
 
     {% for question in questions %}
 
-      <p><strong>
-		{{ question.content }}
-	  </strong></p>
+      <p><strong>{{ question.content }}</strong></p>
 
       {% if question.user_answer %}
       <p>{% trans "Your answer" %}: {{ question|answer_choice_to_string:question.user_answer }}</p>

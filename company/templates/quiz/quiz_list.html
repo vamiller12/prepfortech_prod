@@ -18,15 +18,14 @@
 
 </style>
 <div align="center">
-<h2>{% trans "List of quizzes" %}</h2>
+<h2>{% trans "Test Your Knowledge" %}</h2>
     {% if quiz_list %}
 		<table class="table">
 
 		  <thead>
 			<tr>
-			  <th>{% trans "Test" %}</th>
+			  <th>{% trans "Select Your Quiz" %}</th>
 			  <th>{% trans "Category" %}</th>
-			  <th></th>
 			</tr>
 		  </thead>
 
@@ -35,12 +34,12 @@
         {% for quiz in quiz_list %}
 
   			<tr>
-			  <td>{{ quiz.title }}</td>
-			  <td>{{ quiz.category }}</td>
 			  <td>
-				<a href="{% url 'quiz_start_page' slug=quiz.url %}">
-				  {% trans "Take The Test" %}
-				</a></td>
+			  	<a href="{% url 'quiz_start_page' slug=quiz.url %}">
+			  {{ quiz.title }}
+			  	</a>
+			  </td>
+			  <td>{{ quiz.category }}</td>
 			</tr>
 
         {% endfor %}
