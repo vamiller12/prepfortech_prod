@@ -120,3 +120,9 @@ def eli5xaas(request):
 @login_required
 def eli5thecloud(request):
     return render(request, "eli5-thecloud.html", {})
+@login_required
+def eli5nosqlvsql(request):
+    return render(request, "eli5-nosql-vs-sql.html", {})
+@login_required
+def eli54Gto5G(request):
+    return render(request, "eli5-4G-to-5G.html", {})

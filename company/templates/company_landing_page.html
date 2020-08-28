@@ -21,7 +21,6 @@
 </style>
 
 <body>
-
 <div id="page">
 <div class="w3-sidebar w3-bar-block w3-light-grey">
   <div class="w3-container">
@@ -36,7 +35,7 @@
     <a href="{% url 'stock_chart' company.pk%}" class="w3-bar-item w3-button">Stock Chart</a>
     <button class="w3-button w3-block w3-left-align" onclick="RatioFunc()">Ratios</button>
     <div id="RatioOptions" class="w3-dropdown-content w3-bar-block w3-white w3-card-4">
-      <a href="{% url 'fin_ratios' company.pk%}" class="w3-bar-item w3-button">Standarad Ratios</a>
+      <a href="{% url 'fin_ratios' company.pk%}" class="w3-bar-item w3-button">Standard Ratios</a>
       <a href="{% url 'fin_trends' company.pk%}" class="w3-bar-item w3-button">Company Trends</a>
     </div>
     <!-- <a href="{% url 'fin_ratios' company.pk%}" class="w3-bar-item w3-button">Financial Ratios</a> -->

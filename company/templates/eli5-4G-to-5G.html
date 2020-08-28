@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'explained' %}">ELI5</a></li>
+      <li class="breadcrumb-item active">What's With The Switch From 4G to 5G?</li>
+    </ol>
+<style >
+.container1{    
+position: relative;
+top: 53px;
+left: 210px;
+width: 80%;
+height: 100%;}
+</style>
+
+
+<div class="container" align="center">
+  <div class="card mt-4">
+  <img class="card-img" src="{% static 'img/eli5/4Gv5G.png' %}" alt="" height="225px" border="1">
+        <div class="card-body">
+    	    <h3 class="card-header" align="center">What's With The Switch From 4G to 5G?</h3>
+            <p class="card-body" align="left">
+            <h4 align="left">TL;DR</h4>
+            <p align="left">‘G’ stands for generation and relates to the volume and speed that data can be transferred in a wireless network. The difference between 4G and 5G is the frequency, or the cycle per second, of the radio waves (both have millimeter wavelengths). 4G is roughly 600-700 MHz or 6-7 million cycles per second.  5G is anywhere from 600-700 MHz for low band towers, 2.5-3.7 GHz, or 2.5 billion cycles per second, for mid-band towers, and 25-39 GHz, or 25-39 billion cycles per second, for high-band towers.</p></p>
+            <p align="left">The business reason for the change is more devices are built to use wireless networks (think IoT revolution). Wireless networks need to keep up with the increased demand and improve on wireless service delivery.</p>
+       	</div>
+	</div>
+	<div class="card">
+		<div class="card-body">	
+      <h5 align="left">5G:</h5>
+			<p align="left">First introduced in 2019, the new network technology is being systemically rolled out throughout the United States and internationally. With 5G towers providing more cycles per second for sending and receiving signals, connections can increase and latency will decrease. With more devices able to connect to the same signal AND receive data faster, customers will have better wireless experiences. While Verizon’s statement that one of their 5G service offerings reduces latency by 46% to 30 milliseconds may seem trivial, that time can be vital for machinery and is noticeable by the human eye.</p> 
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-body">	
+			<h5 align="left">4G:</h5>
+			<p align="left">First introduced in the last 1990’s, this network technology enabled the mobile device capacities such as internet, video conferencing, and HD TV. 4G operates at roughly 600-700 MHz or 6-7 million cycles per second and was a drastic improvement over the 3G technology.  4G went through iterations as technology advanced, eventually spawning the 4G LTE (Long Term Evolution) and then the 4G LTE Advanced service offering. Each iteration increased download speed creating better user experiences across devices.</p>
+        </div>
+     </div>
+
+</div>
+</div>
+</div>
+{% endblock %}
