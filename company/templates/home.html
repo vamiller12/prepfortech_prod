@@ -3,10 +3,17 @@
 {% block 'content' %}
 <style>
   #home-page{position: relative;
-    top: 53px;}
+    top: 53px;
+    padding-bottom: 120px;
+   
+     /* the bottom margin is the negative value of the footer's height */
+}
+
+
+
 </style>
 <body>
-  <div class="container" id=home-page>
+  <div class="container" id=home-page >
     
     <header class="jumbotron my-4" style="background-image: url({% static 'img/papyrus.png' %})">
       <h1 class="display-3">Welcome to PrepForTech!</h1>
@@ -14,7 +21,7 @@
     </header>
 
     
-    <div class="row text-center">
+    <div id=content1 class="row text-center">
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
           <img class="card-img-top" src="{% static 'img/research-home-page.png' %}" alt="">
@@ -68,5 +75,70 @@
       </div>
     </div>
   </div>
+  <!-- Footer -->
+<footer class="page-footer font-small pt-4 bg-light">
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+        <!-- Content -->
+        <h5 class="text-uppercase">Prep For Tech</h5>
+        
+      </div>
+      <!-- Grid column -->
+      <hr class="clearfix w-100 d-md-none pb-3">
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="{% url 'termsofservice' %}">Terms of Service</a>
+          </li>
+          <li>
+            <a href=" {% url 'privacy' %}">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#!">Acknowledgements</a>
+          </li>
+        <!--  <li>
+            <a href="#!">Sitemap</a>
+          </li> -->
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+      <!-- Grid column -->
+    <!--  <div class="col-md-3 mb-md-0 mb-3">
+        
+        <h5 class="text-uppercase">Links</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a> Add Contact
+          </li>
+          <li>
+            <a href="#!">Link 2</a> Add About Us
+          </li>
+          <li>
+            <a href="#!">Link 3</a> Add Pricing
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div> -->
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  </div>
+  <!-- Footer Links -->
+ <div  class="footer-copyright text-center py-3">© 2020 Copyright: EasySource LLC - All Rights Reserved </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 </body>
 {% endblock %}

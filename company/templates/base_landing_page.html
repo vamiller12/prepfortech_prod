@@ -8,6 +8,8 @@
       {% block stylesheet %}{% endblock %}  
   </head>
   <style>
+    
+    body { padding-bottom: 70px; }
 
   </style>
 <body>
@@ -61,6 +63,32 @@
 
 {% block 'content' %}
 {% endblock %}
+
+<div class="navbar navbar-light fixed-bottom bg-light">
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="row">
+                <ul class="navbar-nav mr-auto">      
+                    <li class="nav-item">
+                        <a href="#" target="_blank">Term of Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" target="_blank">Privacy Policy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" target="_blank">Site Map</a>
+                    </li>
+                  </ul>
+            </div>
+            <div class="row">
+                <p>
+                    © Copyright 2020 EasySource, LLC - All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+  </div>
+
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

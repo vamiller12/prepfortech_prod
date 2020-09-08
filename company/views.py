@@ -126,3 +126,9 @@ def eli5nosqlvsql(request):
 @login_required
 def eli54Gto5G(request):
     return render(request, "eli5-4G-to-5G.html", {})
+
+def privacy(request):
+    return render(request, "privacy-policy.html", {})
+
+def termsofservice(request):
+    return render(request, "terms-of-service.html", {})
