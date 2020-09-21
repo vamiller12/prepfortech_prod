@@ -25,23 +25,23 @@
 .card {
   background: #eaeaed;
   color: #0087cc;
-  transform-style: preserve-3d;
-  transition: all .8s ease-in;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: all .8s ease-in;
   width: 50%;
 }
 
 .card:hover {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .card .side {
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: 6px;
 }
 
 .card .back {
   color: #0087cc;
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .foot {bottom: 0}

@@ -17,7 +17,9 @@
     height: 100%;}
 
 	{% for line in prod_lines %}
-	#section{{line.pk}} {background-color: #edf0ee;}
+	#section{{line.pk}} {
+		padding-top:53px;
+		background-color: #edf0ee;}
 	{% endfor %}
 </style>
 <div align="right">
@@ -72,6 +74,7 @@
 					  </div>
 					</div>
 				  </div>
+				  <hr></hr>
 				 {% endfor %}
 				</div>
 			</div>
