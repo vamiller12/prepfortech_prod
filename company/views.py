@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
 from .models import Company, Financials_StockChart, Financial_Ratios, Product_Lines, Financial_Trends, ProductSpecific, Product_Line_Vocab,Product_Spec_Vocab, Vocab, Fin_Trends, Fin_Ratios, Company_Newsfeed
 from django.contrib.auth.decorators import login_required
@@ -21,7 +22,18 @@ def company_board(request):
     return HttpResponse(response_html)
 @login_required
 def company_research_board(request):
-    company = Company.objects.all()
+    company = Company.objects.order_by('companyName')
+    page = request.GET.get('page', 1)
+    
+    paginator = Paginator(company, 8)
+    
+    try: 
+        company = paginator.page(page)
+    except PageNotAnInteger:
+        company = paginator.page(1)
+    except EmptyPage:
+        company = paginator.page(paginator.num_pages)
+
     return render(request, "company_research_board.html", {'company': company})
 @login_required
 def company_specific(request, pk):
