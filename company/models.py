@@ -118,6 +118,7 @@ class TrackingHistory(models.Model):
 	content_object	= GenericForeignKey('content_type','object_id')
 	viewed_on 		= models.DateTimeField(auto_now_add=True)
 	ip_address		= models.CharField(max_length=220, blank=True, null=True)
+	sys_path		= models.CharField(max_length=1000, blank=True, null=True, default='path')
 
 	def __str__(self):
 		return self.content_object
@@ -129,15 +130,12 @@ class TrackingHistory(models.Model):
 
 def object_viewed_receiver(sender, instance, request, *args, **kwargs):
 	c_type = ContentType.objects.get_for_model(sender)
-#	print(sender)
-#	print(instance)
-#	print(request)
-#	print(request.user)
 
 	new_view_obj = TrackingHistory.objects.create(
 		user = request.user,
 		content_type = c_type,
 		object_id = instance.id,
-		ip_address = get_client_ip(request)
+		ip_address = get_client_ip(request),
+		sys_path = request.get_full_path()
 		)
 object_viewed_signal.connect(object_viewed_receiver)
