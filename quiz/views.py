@@ -29,6 +29,7 @@ class SittingFilterTitleMixin(object):
 
 
 class QuizListView(ListView):
+    
     model = Quiz
 
     def get_queryset(self):

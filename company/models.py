@@ -86,8 +86,11 @@ class ProductSpecific(models.Model):
 class Vocab(models.Model):
 	term = models.CharField(max_length=200, unique=True)
 	definition = models.CharField(max_length=1000)
-	useful_example = models.CharField(max_length=1000)
+	useful_example = models.CharField(max_length=1000, blank=True)
 	
+	def __str__(self):
+		return self.term
+
 	class Meta:
 		verbose_name_plural = "Vocab"
 
@@ -139,3 +142,10 @@ def object_viewed_receiver(sender, instance, request, *args, **kwargs):
 		sys_path = request.get_full_path()
 		)
 object_viewed_signal.connect(object_viewed_receiver)
+
+class Vocab_Category(models.Model):
+	category = models.CharField(max_length=1000, unique=True) 
+
+	def __str__(self):
+        	return str(self.category)
+
