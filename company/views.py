@@ -180,6 +180,10 @@ def eli5nosqlvsql(request):
 def eli54Gto5G(request):
     return render(request, "eli5-4G-to-5G.html", {})
 
+@login_required
+def eliinfrastructure(request):
+    return render(request, "eli5-it_infrastructure.html", {})
+
 def privacy(request):
     return render(request, "privacy-policy.html", {})
 

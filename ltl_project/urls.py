@@ -66,6 +66,7 @@ urlpatterns = [
     url(r'^eli5/eli5-thecloud', views.eli5thecloud, name='eli5thecloud'),
     url(r'^eli5/eli5-nosql-vs-sql', views.eli5nosqlvsql, name='eli5nosqlvssql'),
     url(r'^eli5/eli5-4G-to-5G', views.eli54Gto5G, name='eli54Gto5G'),
+    url(r'^eli5/eli5-it_infrastructure', views.eliinfrastructure, name='eli_infras'),
     url(r'^privacy-policy', views.privacy, name='privacy'),
     url(r'^terms-of-service', views.termsofservice, name='termsofservice'),
     path('thingstochange/', admin.site.urls),

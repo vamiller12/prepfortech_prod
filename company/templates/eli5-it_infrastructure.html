@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'explained' %}">ELI5</a></li>
+      <li class="breadcrumb-item active">IT Infrastucture</li>
+    </ol>
+<style >
+.container1{    
+position: relative;
+top: 53px;
+left: 210px;
+width: 80%;
+height: 100%;}
+</style>
+
+<div class="container" align="center">
+  <div class="col-lg-9" >
+  <div class="card mt-4">
+        <div class="card-header" align="left">IT Infrastucture</div>
+        <div class="card-body">
+            <p class="card-text">
+            <h4 align="left">TL;DR</h4>
+            <p align="left">IT Infrastructure is the broad category of all hardware, software, and network components needed for a company to perform their day-to-day operations. The hardware and software chosen is dependent on several factors that include both technical and personal preferences as well as cost.</p></p>
+       	</div>
+	</div>
+	<div class="card" align="left">
+  <div class="card-header">Hardware Overview:</div>
+		<div class="card-body">	
+			<p align="left">The physical (or virtualized) hardware choices center around storage, servers, switches, routers, network devices, and personal computers. Each hardware piece within an infrastructure setting has a defined purposes. Those purposes are:</p> 
+              <li align="left">Storage: The physical place that holds the data. It is common for the storage devices to be located on-premises or in data centers.</li>
+              <li align="left"><a href="{% url 'eli5server'%}">Servers</a>: A combination of hardware and software components that are configured to handle specific tasks.</li>
+              <li align="left">Switches: Hardware that facilitates wired connection between other devices allowing the devices to communicate.</li>
+              <li align="left">Routers: Hardware that directs internet traffic.</li>
+              <li align="left">Computers/Mobile Devices: The typical devices employed by end users to connect to networks.</li>
+		</div>
+	</div>
+	<div class="card" align="left">
+    <div class="card-header">Software Overview:</div>
+    <div class="card-body">	
+			<p align="left">The software choices include operating systems, middleware, security systems, and frontend systems. Each software piece is responsible for interacting with the software for management, setting has a defined purposes. Those purposes are: </p>
+              <li align="left">Operating System: Software that manages the hardware, applications, and operations of piece of hardware.</li>
+              <li align="left">Middleware: Software that connects specific applications to operating systems, allowing the application to run on the operating system</li>
+              <li align="left">Security Systems: Applications that are designed to keep hardware and software safe from unwanted visitors and malicious activities.</li>
+        </div>
+     </div>
+  <div class="card">
+    <div class="card-body"> 
+      <h5 align="left">Reference Links:</h5>
+              <li align="left"><a href="https://www.redhat.com/en/topics/cloud-computing/what-is-it-infrastructure">IT Overview - Red Hat </a>
+              <li align="left"><a href="https://www.bmc.com/blogs/what-is-it-infrastructure-and-what-are-its-components/">IT Infrastructure and Components - BMC </a>
+        </div>
+     </div>
+
+</div>
+</div>
+{% endblock %}

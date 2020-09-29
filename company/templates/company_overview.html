@@ -23,7 +23,13 @@
         background-color:#transparent;
         border:3px solid #333333;}
 
-</style>
+
+    <div id="widget-news"></div>
+    <script src="https://softcapital.com/widget/widget.js"></script>
+    <script>createSoftCapitalWidget("News", "widget-news", {"symbol":"MSFT","view":"panel","title":"News","showNews":"10","showImg":true,"showTooltip":true,"id":"widget-news","css":{"panel":{"title":"color:red;font-weight:bold","itemTitle":"color:red"}}});</script>
+
+
+ </style>   
 <div id="competitors" class="card" align="left">
 <div class="card-header">The Dope Sheet</div>
 <div class="card-body">
@@ -37,7 +43,6 @@
 </div>
 <div id="company-news" class="card" align="left">
 <div class="card-header">Recent News</div>
-
 <div class="card-body border-secondary mb-3">
     <h4>{{ feed.feed.title }}</h4>
         {% if feed.entries %}
@@ -56,4 +61,6 @@
         {% else %}
  
         {% endif %}
-</div>
+</div> 
+
+
