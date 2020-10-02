@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item active">ELI5</li>
+    </ol>
+<style >
+
+    .container1{    
+    position: relative;
+    top: 53px;
+    left: 210px;
+    width: 80%;
+    height: 100%;}
+
+</style>
+<body>
+
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Topic</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="{% url 'eli5thecloud'%}">Why the Cloud?</a></td>
+            <td>Business</td>
+          </tr>
+          <tr>
+            <td><a href="{% url 'eli5xaas'%}">Why The XaaS Model?</a></td>
+            <td>Business</td>
+          </tr>
+          <tr>  
+            <td><a href="{% url 'eli5server'%}">What is a server?</a></td>
+            <td>Technical</td>
+          </tr>
+          <tr>  
+            <td><a href="{% url 'eli5nosqlvssql' %}">NoSQL vs SQL Databases</a></td>
+            <td>Technical</td>
+          </tr>
+          <tr>  
+            <td><a href="{% url 'eli54Gto5G' %}">What's With The Switch From 4G to 5G?</a></td>
+            <td>Technical</td>
+          </tr>
+          <tr>  
+            <td><a href="{% url 'eli_infras' %}">IT Infrastructure Overview</a></td>
+            <td>Technical</td>
+          </tr>
+       </tbody>
+      </table>
+    </div>
+  </body>
+
+
+{% endblock %}
+

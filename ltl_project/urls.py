@@ -67,6 +67,18 @@ urlpatterns = [
     url(r'^eli5/eli5-nosql-vs-sql', views.eli5nosqlvsql, name='eli5nosqlvssql'),
     url(r'^eli5/eli5-4G-to-5G', views.eli54Gto5G, name='eli54Gto5G'),
     url(r'^eli5/eli5-it_infrastructure', views.eliinfrastructure, name='eli_infras'),
+
+    url(r'^eli5/eli5-storage', views.elistorage, name='eli_storage'),
+    url(r'^eli5/eli5-switches', views.eliswitches, name='eli_switches'),
+    url(r'^eli5/eli5-routers', views.elirouters, name='eli_routers'),
+    url(r'^eli5/eli5-middleware', views.elimiddleware, name='eli_middleware'),
+    url(r'^eli5/eli5-operating-systems', views.eliopssys, name='eli_opssys'),
+    url(r'^eli5/eli5-security-systems', views.elisecsys, name='eli_secsys'),
+    url(r'^eli5/eli5-containers', views.elicontainers, name='eli_containers'),
+    url(r'^eli5/eli5-hci_v_ci', views.elihcivci, name='eli_hcivci'),
+    url(r'^eli5/eli5-storage-types', views.elistoragetypes, name='eli_storage_types'),
+    url(r'^eli5/eli5-virtualization', views.elivirtualization, name='eli_virt'),
+
     url(r'^privacy-policy', views.privacy, name='privacy'),
     url(r'^terms-of-service', views.termsofservice, name='termsofservice'),
     path('thingstochange/', admin.site.urls),

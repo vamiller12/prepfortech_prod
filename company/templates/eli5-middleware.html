@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'explained' %}">ELI5</a></li>
+      <li class="breadcrumb-item active">Middleware</li>
+    </ol>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style >
+.container1{    
+position: relative;
+top: 53px;
+left: 210px;
+width: 80%;
+height: 100%;}
+</style>
+
+
+<div class="container" align="center">
+  <div class="col-lg-9" >
+  <div class="card mt-4">
+  <img class="card-img" src="{% static 'img/eli5/4Gv5G.png' %}" alt="" height="225px" border="1">
+        <div class="card-header" align="left">TL;DR - Middleware</div>
+        <div class="card-body">
+            <p align="left">A piece of software that acts as the glue between operating systems and other applications. Just as the operating system works to manage the hardware, the middleware is what allows the operating system to function with the applications. The middleware is application and operating system specific which is why some programs will not run on certain operating systems. Remember the last time you wanted to connect to a new printer but you had to install the driver first? That driver is a piece of a middleware that allows you to interact with the printer.</p>
+       	</div>
+	</div>
+   <div class="card">
+    <div class="card-body"> 
+      <h5 align="left">Reference Links:</h5>
+              <li align="left"><a href="https://www.redhat.com/en/topics/middleware/what-is-middleware">Red Hat - Middleware</a></li>
+              <li align="left"><a href="https://azure.microsoft.com/en-us/overview/what-is-middleware/">Microsoft - Middleware</a></li>
+        </div>
+     </div>
+</div>
+</div>
+</div>
+{% endblock %}

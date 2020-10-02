@@ -12,12 +12,54 @@
     left: 210px;
     width: 80%;
     height: 100%;}
-
+.alert-info {
+  padding: 2px;
+  
+  
+  
+}
+.closebtn {
+  margin-left: 15px;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn:hover {
+  color: black;
+}
  
   </style>
 <div align="center">
 <h1>{{company.companyName}} Annual Reports</h1>
-<br></br>
+<hr>
+<div class="alert-info">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <p><h5><ul>What To Look For In Annual Reports:</h5>
+    <div class = "row">
+      <div class = "col"></div>
+      <div class = "col">CEO Letter to the Shareholders</div>
+      <div class = "col">Business Section</div>
+      <div class = "col"></div>
+    </div>
+    <div class = "row">
+      <div class = "col"></div>
+      <div class = "col">Vision and Strategy Statements</div>
+      <div class = "col">Acquisitions, Divestments, Other Holdings  </div>
+      <div class = "col"></div>
+    </div>
+    <div class = "row">
+      <div class = "col"></div>
+      <div class = "col">Risks</div>
+      <div class = "col">Financial Statements</div>
+      <div class = "col"></div>
+    </div>
+  </ul>
+  </p>
+</div>
+<hr>
 <div class="row">
   <div class="col-md-4"><button class="btn btn-info" onclick="Show2020()">{{company.fiscal_year_end}} Report </button></div>
   <div class="col-md-4"><button class="btn btn-info" onclick="Show2019()">{{company.fiscal_year_end|add:"-1" }} Report</button></div>

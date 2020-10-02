@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'explained' %}">ELI5</a></li>
+      <li class="breadcrumb-item active">Security Systems</li>
+    </ol>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style >
+.container1{    
+position: relative;
+top: 53px;
+left: 210px;
+width: 80%;
+height: 100%;}
+</style>
+
+
+<div class="container" align="center">
+  <div class="col-lg-9" >
+  <div class="card mt-4">
+  <img class="card-img" src="{% static 'img/eli5/4Gv5G.png' %}" alt="" height="225px" border="1">
+        <div class="card-header" align="left">TL;DR - Security Systems</div>
+        <div class="card-body">
+            <p align="left">The board grouping of applications and tools that are used to keep data and infrastructure secure from threats.</p>
+       	</div>
+	</div>
+  <div class="card" align="left">
+  <div class="card-header">Storage Devices:</div>
+      <div class="card-body"> 
+      <p align="left">There are options for the physical device the data can be stored on. The main aspects that are used to decide on the storage device are the speed, cost, and sometimes durability (depending on the business need for the storage).</p> 
+              <li align="left">Intrusion Detection Systems: Part of a cybersecurity toolset that is focused on determining and alerting security teams if and where breaches have occurred so incident response protocols can be enacted.</li>
+              <li align="left">Intrusion Prevention Systems: Part of the cybersecurity toolset that is focused on identifying threats and stopping them from happening. Preventative steps taken are anything from banning activity from certain IP addresses or physical locations to identifying atypical user behavior which could signal a stolen credential.</li>
+              <li align="left">Firewalls: The front-line of defense against cybersecurity threats. They work by acting as a gatekeeper for allowing internet traffic on a network. </li>
+              <li align="left">Multi-Factor Identification (MFA): A security policy that requires users to provide two forms of authentication before being able to login. Usually this incorporates the traditional login and subsequent approval on a mobile device or email.</li>
+              
+  </div>
+  </div>
+   <div class="card">
+    <div class="card-body"> 
+      <h5 align="left">Reference Links:</h5>
+
+        </div>
+     </div>
+</div>
+</div>
+</div>
+{% endblock %}

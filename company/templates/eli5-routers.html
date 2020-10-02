@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'explained' %}">ELI5</a></li>
+      <li class="breadcrumb-item active">Routers</li>
+    </ol>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style >
+.container1{    
+position: relative;
+top: 53px;
+left: 210px;
+width: 80%;
+height: 100%;}
+</style>
+
+
+<div class="container" align="center">
+  <div class="col-lg-9" >
+  <div class="card mt-4">
+  <img class="card-img" src="{% static 'img/eli5/4Gv5G.png' %}" alt="" height="225px" border="1">
+        <div class="card-header" align="left">TL;DR - Routers</div>
+        <div class="card-body">
+            <p align="left">In short, routers are responsible for routing internet requests from devices to internet networks. Based on the IP address of the information being transmitted, the router forwards the request to the modem.</p>
+       	</div>
+	</div>
+   <div class="card">
+    <div class="card-body"> 
+      <h5 align="left">Reference Links:</h5>
+              <li align="left"><a href="https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/how-does-a-router-work.html">Cisco - Routers Explained</a></li>
+              <li align="left"><a href="https://us.norton.com/internetsecurity-iot-smarter-home-what-is-router.html">Norton - Routers at Home</a></li>
+        </div>
+     </div>
+</div>
+</div>
+</div>
+{% endblock %}

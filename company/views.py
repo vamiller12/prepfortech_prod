@@ -26,6 +26,11 @@ def company_board(request):
 @login_required
 def company_research_board(request):
     company = Company.objects.order_by('companyName')
+    
+    company_search = request.GET.get('company_search')
+    if company_search != '' and company_search is not None:
+        company = company.filter(companyName__icontains=company_search)  
+
     page = request.GET.get('page', 1)
     
     paginator = Paginator(company, 8)
@@ -36,6 +41,9 @@ def company_research_board(request):
         company = paginator.page(1)
     except EmptyPage:
         company = paginator.page(paginator.num_pages)
+
+    
+
 
     return render(request, "company_research_board.html", {'company': company})
 
@@ -152,7 +160,7 @@ def dictionary(request):
     dictionary = Vocab.objects.all()
     term_search = request.GET.get('term_search')
     if term_search != '' and term_search is not None:
-        dictionary = dictionary.filter(term__icontains=term_search)
+        dictionary = (dictionary.filter(term__icontains=term_search) ) | (dictionary.filter(definition__icontains=term_search))
 
     return render(request, "dictionary.html", {'dictionary':dictionary})
 
@@ -183,6 +191,42 @@ def eli54Gto5G(request):
 @login_required
 def eliinfrastructure(request):
     return render(request, "eli5-it_infrastructure.html", {})
+
+@login_required
+def elistorage(request):
+    return render(request, "eli5-storage.html", {})
+
+@login_required
+def eliswitches(request):
+    return render(request, "eli5-switches.html", {})
+
+@login_required
+def elirouters(request):
+    return render(request, "eli5-routers.html", {})
+@login_required
+def elimiddleware(request):
+    return render(request, "eli5-middleware.html", {})
+@login_required
+def eliopssys(request):
+    return render(request, "eli5-operating-systems.html", {})
+@login_required
+def elisecsys(request):
+    return render(request, "eli5-security-systems.html", {})
+@login_required
+def elicontainers(request):
+    return render(request, "eli5-containers.html", {})
+
+@login_required
+def elivirtualization(request):
+    return render(request, "eli5-virtualization.html", {})
+
+@login_required
+def elihcivci(request):
+    return render(request, "eli5-hcivci.html", {})
+
+@login_required
+def elistoragetypes(request):
+    return render(request, "eli5-storage-types.html", {})
 
 def privacy(request):
     return render(request, "privacy-policy.html", {})

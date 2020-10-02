@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TrackingHistory, Vocab, Vocab_Category
+from .models import TrackingHistory, Vocab, Vocab_Category, Company
 # Register your models here.
 
 class VocabAdmin(admin.ModelAdmin):
@@ -10,5 +10,6 @@ class VocabAdmin(admin.ModelAdmin):
 admin.site.register(TrackingHistory)
 admin.site.register(Vocab_Category)
 admin.site.register(Vocab, VocabAdmin)
+admin.site.register(Company)
 
 

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'explained' %}">ELI5</a></li>
+      <li class="breadcrumb-item active">Containers</li>
+    </ol>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style >
+.container1{    
+position: relative;
+top: 53px;
+left: 210px;
+width: 80%;
+height: 100%;}
+</style>
+
+
+<div class="container" align="center">
+  <div class="col-lg-9" >
+  <div class="card mt-4">
+  <img class="card-img" src="{% static 'img/eli5/4Gv5G.png' %}" alt="" height="225px" border="1">
+        <div class="card-header" align="left">TL;DR - Containers</div>
+        <div class="card-body">
+            <p align="left">The board grouping of applications and tools that are used to keep data and infrastructure secure from threats.</p>
+       	</div>
+	</div>
+  <div class="card" align="left">
+  <div class="card-header">Storage Devices:</div>
+      <div class="card-body"> 
+      <p align="left">Containers sit on top of existing hardware to create divided environments with access to the same resources. When creating new programs or building applications, developers may use different coding languages or packages which may contain different dependencies. If those dependencies require different versions of the same packages, upgrading or developing one application may unintentionally break a different application. By being able to create separate environments, teams can use the same underlying resources while not having to worry about affecting other applications.</p> 
+      
+      <p>For a non-technical example, containers are like food storage vessels. Without a container, food storage in a refrigerator would be messy and not worth it. So instead of having to purchase a new refrigerator for each food item meant to be stored, the food can be put into containers to keep them separated.</p> 
+      
+      <p>The biggest names in the container industry include Kubernetes and Docker.</p> 
+              
+  </div>
+  </div>
+   <div class="card">
+    <div class="card-body"> 
+      <h5 align="left">Reference Links:</h5>
+              <li align="left"><a href="https://www.vmware.com/topics/glossary/content/kubernetes">VMware - Kubernetes</a></li>
+              <li align="left"><a href="https://www.docker.com/resources/what-container">Docker - Containers</a></li>
+              <li align="left"><a href="https://www.redhat.com/en/topics/containers">Red Hat - Containers</a></li>
+        </div>
+     </div>
+</div>
+</div>
+</div>
+{% endblock %}

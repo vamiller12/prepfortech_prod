@@ -14,7 +14,8 @@ class Company(models.Model):
 	employee_count = models.CharField(max_length=100, default='0')
 	ownership = models.CharField(max_length=100, default='public')
 	companyURL = models.CharField(max_length=100, default='www.google.com')
-	competitors = models.CharField(max_length=100, default='Red Hat')
+	product_page_url = models.CharField(max_length=100, default='www.google.com')
+	competitors = models.CharField(max_length=1000, default='Red Hat')
 	is_draft = models.BooleanField(default=True)
 	fiscal_year_end = models.CharField(max_length=100, default='Jan 1 2020')
 	overview = models.CharField(max_length=1000, default='Red Hat')
@@ -145,7 +146,9 @@ object_viewed_signal.connect(object_viewed_receiver)
 
 class Vocab_Category(models.Model):
 	category = models.CharField(max_length=1000, unique=True) 
-
+	term = models.ManyToManyField(Vocab,
+                                  verbose_name=("Vocab"),
+                                  blank=True)
 	def __str__(self):
         	return str(self.category)
 

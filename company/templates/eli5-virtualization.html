@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'explained' %}">ELI5</a></li>
+      <li class="breadcrumb-item active">Virtualization</li>
+    </ol>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style >
+.container1{    
+position: relative;
+top: 53px;
+left: 210px;
+width: 80%;
+height: 100%;}
+</style>
+
+
+<div class="container" align="center">
+  <div class="col-lg-9" >
+  <div class="card mt-4">
+  <img class="card-img" src="{% static 'img/eli5/4Gv5G.png' %}" alt="" height="225px" border="1">
+        <div class="card-header" align="left">TL;DR - Virtualization</div>
+        <div class="card-body">
+            <p align="left">The process of abstracting the hardware from the software via a hypervisor in order to utilize the full capability of the underlying hardware and/or simplify maintenance and management. By decoupling the software from the hardware, the hypervisor allows the hardware device to manipulated for business purposes. Applications of virtualization options exist from the complexities of data center hardware and networks, to the simpler the process of virtualizing desktops.</p>
+       	</div>
+	</div>
+  <div class="card" align="left">
+  <div class="card-header">Examples of Virtualization:</div>
+      <div class="card-body"> 
+              <li align="left">Storage Virtualization: Combining multiple physical storage devices to appear as a single, large storage source. This approach allows for flexibility in designing.</li>
+              <li align="left">VDI (Virtual Desktop Infrastructure): Creating the appearance of multiple desktops by adding virtual machines to the actual desktop. This allows for easier maintenance and lower costs.</li>
+              <li align="left">Virtual Private Network (VPN): A virtualization of the private network that allows users not in the private network range to connect to the network and anything (applications, data, etc.) secured on the network.</li>
+              <li align="left">Virtual Network Function (VNFs): A networking architecture where the network services are virtualized in order to configure and share components as needed.</li> 
+  </div>
+  </div>
+   <div class="card">
+    <div class="card-body"> 
+      <h5 align="left">Reference Links:</h5>
+              <li align="left"><a href="https://www.redhat.com/en/topics/virtualization/what-is-virtualization">Red Hat - Virtualization</a></li>
+              <li align="left"><a href="https://www.docker.com/resources/what-container">VMware - Virtualization</a></li>
+        </div>
+     </div>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'explained' %}">ELI5</a></li>
+      <li class="breadcrumb-item active">Hyperconverged Infrastructure vs Converged Infrastructure</li>
+    </ol>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style >
+.container1{    
+position: relative;
+top: 53px;
+left: 210px;
+width: 80%;
+height: 100%;}
+</style>
+
+
+<div class="container" align="center">
+  <div class="col-lg-9" >
+  <div class="card mt-4">
+  <img class="card-img" src="{% static 'img/eli5/4Gv5G.png' %}" alt="" height="225px" border="1">
+        <div class="card-header" align="left">TL;DR - Hyperconverged Infrastructure vs Converged Infrastructure</div>
+        <div class="card-body">
+            <p align="left">HCI is virtualizing the already combined compute, storage, and networking functions, while converged infrastructure is combining the same compute, storage, and networking  functions but without the virtualization option. The creation of converged infrastructure was a game changer based on the ability to simplify the management of a data center by being a turn-key application. Hyperconverged infrastructure was the next iteration of data center efficiency by employing the virtualization concepts which create pools of memory and compute power.</p>
+       	</div>
+	</div>
+   <div class="card">
+    <div class="card-body"> 
+      <h5 align="left">Reference Links:</h5>
+              <li align="left"><a href="https://www.nutanix.com/theforecastbynutanix/technology/difference-between-converged-and-hyperconverged-infrastructure">Nutanix - CI vs HCI</a></li>
+        </div>
+     </div>
+</div>
+</div>
+</div>
+{% endblock %}

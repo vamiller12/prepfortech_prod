@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'explained' %}">ELI5</a></li>
+      <li class="breadcrumb-item active">Storage</li>
+    </ol>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style >
+.container1{    
+position: relative;
+top: 53px;
+left: 210px;
+width: 80%;
+height: 100%;}
+</style>
+
+
+<div class="container" align="center">
+  <div class="col-lg-9" >
+  <div class="card mt-4">
+  <img class="card-img" src="{% static 'img/eli5/4Gv5G.png' %}" alt="" height="225px" border="1">
+        <div class="card-header" align="left">TL;DR - Storage</div>
+        <div class="card-body">
+            <p align="left">This is the resting place for data in a system. To interact with data in a meaningful manner, it must be saved and assessable in a timely manner. The storage machines ability to handle the requests is one major constraint on how the company can build software and the end user experience. With the advent of big data and virtualization, there is continued innovation in the storage space as costs can be driven down while increasing in simplicity.</p>
+       	</div>
+	</div>
+  <div class="card" align="left">
+    <div class="card-header">Storage Devices:</div>
+    <div class="card-body"> 
+      <p align="left">There are options for the physical device the data can be stored on. The main aspects that are used to decide on the storage device are the speed, cost, and sometimes durability (depending on the business need for the storage).</p> 
+              <li align="left">Solid State Drives (SSD): Flash storage devices like flash drives that are used to store data. The data is stored on a microchip, and not on physical disk. The microchips are much more durable than a disc which allow them to be used in devices that are prone being physically harmed. The cost of SSD’s is usually higher than HDDs.</li>
+              <li align="left">Hard Disc Drive (HDD): The core storage device for many computers. Hard drives are where information for the computer is stored, and the disk is the physical location that is storing that data. When you hear a spinning noise as you turn on your compute, that is your computer reading from/writing to the hard drive. HDD’s are cheaper than SSD's, are slower, and can damage easily (this is one reason dropping your computer is bad idea).</li>
+              
+  </div>
+  </div>
+  <div class="card" align="left">
+  <div class="card-header">Data Storage Options:</div>
+      <div class="card-body"> 
+      <p align="left">Aside from storage devices, there are also options for how data can be stored.</p> 
+              <li align="left">Object: A storage technique where data is stored as an object. The object contains metadata that can be customized per object and an identifier allowing the data to be stored anywhere within a repository. This is a common storage technique for unstructured data. </li>
+              <li align="left">File: A storage technique where data is stored in a complete form within a folder, usually via a NAS. This is the same architecture as saving files into folders on your desktop.</li>
+              <li align="left">Block: A storage technique where data is split up and is stored in chunks. This allows data to be saved across multiple servers, maximizing the storage on each machine. Data is given a unique identifier and accessed via a SAN.</li>
+              
+  </div>
+  </div>
+    <div class="card">
+    <div class="card-body"> 
+      <h5 align="left">Reference Links:</h5>
+              <li align="left"><a href="https://www.dropbox.com/business/resources/what-is-an-ssd">Dropbox - SSD and HDD </a></li>
+        </div>
+     </div>
+</div>
+</div>
+</div>
+{% endblock %}

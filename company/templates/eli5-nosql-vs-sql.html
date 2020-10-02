@@ -7,6 +7,7 @@
       <li class="breadcrumb-item"><a href="{% url 'explained' %}">ELI5</a></li>
       <li class="breadcrumb-item active">NoSQL vs SQL Databases</li>
     </ol>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <style >
 .container1{    
 position: relative;
@@ -24,22 +25,21 @@ height: 100%;}
   <div class="col-lg-9" >
   <div class="card mt-4">
   <img class="card-img" src="{% static 'img/eli5/nosql.png' %}" alt="" width="60%" height="275px" border="1">
+        <div class="card-header" align="left">TL;DR - NoSQL vs SQL Databases</div>
         <div class="card-body">
-    	    <h3 class="card-title" align="center">NoSQL vs SQL Databases</h3>
             <p class="card-text">
-            <h4 align="left">TL;DR</h4>
             <p align="left">SQL databases require strict relationships between all data leading to data accuracy and longer creation and retrieval times while NoSQL databases are flexible on storage formats leading to faster creation and retrieval times.</p></p>
        	</div>
 	</div>
-	<div class="card">
+	<div class="card" align="left">
+    <div class="card-header" align="left">SQL Databases</div>
 		<div class="card-body">	
-      <h5 align="left">SQL Databases</h5>
 			<p align="left">SQL databases, a common version of relational databases, are powerful due to the ability to relate data across tables. This allows data to be stored in logical, yet rigid, formats. The rigid nature of a relational database is great for data integrity and completeness but does have some draw backs. Because data about one object may be stored across number tables, it can be timely retrieve existing data when users want to report on it. Creating or inserting new data into the database can also be difficult and time intensive since data needs to be inserted into each column in a data table for the insert to work. Adding new columns to large tables (think million of rows) requires the table to be taken offline for the maintenance. The maintenance period usually means that customers and the company cannot access or use the program. The speed limitations are what prompted the move to NoSQL.</p> 
 		</div>
 	</div>
-	<div class="card">
+	<div class="card" align="left">
+    <div class="card-header" align="left">NoSQL Databases</div>
 		<div class="card-body">	
-			<h5 align="left">NoSQL Databases</h5>
 			<p align="left">A database without the restrictions of the traditional relational database meaning referential integrity does not have to be met for data insert and retrieval. NoSQL became necessary with the tech boom of the late 1990’s and became popular in the late 2000’s with the advent of social media and ‘big data’. NoSQL databases can be implemented in several data architectures which gives data architects the ability to choose the proper architecture based on the data being collected. The common architectures are key-value pairs, document databases, and graph databases. See NoSQL Databases (href) for more information. Since the data is not stored in relational format, the creation and retrieval can be performed much faster. </p>
         </div>
      </div>

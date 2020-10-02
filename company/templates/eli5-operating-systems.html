@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'explained' %}">ELI5</a></li>
+      <li class="breadcrumb-item active">Operating Systems</li>
+    </ol>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style >
+.container1{    
+position: relative;
+top: 53px;
+left: 210px;
+width: 80%;
+height: 100%;}
+</style>
+
+
+<div class="container" align="center">
+  <div class="col-lg-9" >
+  <div class="card mt-4">
+  <img class="card-img" src="{% static 'img/eli5/4Gv5G.png' %}" alt="" height="225px" border="1">
+        <div class="card-header" align="left">TL;DR - Operating Systems</div>
+        <div class="card-body">
+            <p align="left">Software that sits between the hardware and applications on a computer or machine and manages the interaction between both. The operating system does basic system control allowing the end use to interact with the user interface and not have any knowledge of how the system is working. Taking an action such as launching a program takes strict coordination for the application code to be able to connect with the machine components and behave reliably. </p>
+       	</div>
+	</div>
+   <div class="card">
+    <div class="card-body"> 
+      <h5 align="left">Reference Links:</h5>
+              <li align="left"><a href="https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/">GCF Global - Operating Systems</a></li>
+        </div>
+     </div>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'explained' %}">ELI5</a></li>
+      <li class="breadcrumb-item active">Object Storage vs File Storage vs Block Storage</li>
+    </ol>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style >
+.container1{    
+position: relative;
+top: 53px;
+left: 210px;
+width: 80%;
+height: 100%;}
+</style>
+
+
+<div class="container" align="center">
+  <div class="col-lg-9" >
+  <div class="card mt-4">
+  <img class="card-img" src="{% static 'img/eli5/4Gv5G.png' %}" alt="" height="225px" border="1">
+        <div class="card-header" align="left">TL;DR - Object Storage vs File Storage vs Block Storage:</div>
+        <div class="card-body">
+            <p align="left">Each file storage system allows data to store with different metadata and accessibility options. Customizable metadata for an object is important in the data analytics realm. The attributes are important about an object may change depending on the object such as type of device and IP address. The accessibility options become important where there is a large amount of data or multiple programs trying to read or write from the database simultaneously. In a file storage all requests go down the same file pathway which can lead to requests having to wait for others to be completed. In object and block storage, the data can be stored across locations providing flexibility for the system on accomplishing requests. </p>
+       	</div>
+	</div>
+  <div class="card" align="left">
+  <div class="card-header">Data Formats:</div>
+      <div class="card-body"> 
+              <p align="left">When deciding on while file storage system to employ, the data format is an important and potentially limiting factor. Data takes two high level formats: structured and unstructured.</p>
+              <li align="left">Unstructured: Data that does not have a pre-defined data model. This is the common storage technique for big data since it is far more flexible.</li>
+              <li align="left">Structured: Data that is stored in a schema that employs a rigid form. This is typically found in a relational database where data is split into tables and associated by keys. </li>
+  </div>
+  </div>
+   <div class="card">
+    <div class="card-body"> 
+      <h5 align="left">Reference Links:</h5>
+              <li align="left"><a href="https://www.ibm.com/cloud/learn/object-storage">IBM - Object Storage</a></li>
+              <li align="left"><a href="https://www.ibm.com/cloud/learn/block-storage">IBM - Block Storage</a></li>
+              <li align="left"><a href="https://www.ibm.com/cloud/learn/file-storage">IBM - File Storage</a></li>
+              <li align="left"><a href="https://www.redhat.com/en/topics/data-storage/file-block-object-storage">Red Hat - File/Block/Object Storage</a></li>
+        </div>
+     </div>
+</div>
+</div>
+</div>
+{% endblock %}

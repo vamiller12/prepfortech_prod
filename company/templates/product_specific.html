@@ -19,8 +19,14 @@
 	{% for line in prod_lines %}
 	#section{{line.pk}} {
 		padding-top:53px;
-		background-color: #edf0ee;}
+		background-color: #edf0ee;
+		border: 1px solid silver;}
 	{% endfor %}
+
+	#vert-nav-pil{
+	border: 1px solid silver;
+	border-radius: 15px 15px 15px 15px;
+}
 </style>
 <div align="right">
 	<body data-spy="scroll" data-target="#myScrollspy" data-offset="100">
@@ -29,13 +35,14 @@
 		    <nav class="col-sm-3 col-2" id="myScrollspy">
 		      <ul class="nav nav-pills flex-column" > 
 		        {% for line in prod_lines %}
-		        <li class="nav-item">
+		        <li id="vert-nav-pil" class="nav-item">
 		          <a class="nav-link"  href="#section{{line.pk}}">{{line.product_line}}</a>
 		        </li>
 		        {% endfor %}	
 		      </ul>
 		     </nav>
 		<div class="col-md-9 col-8">
+			
 				{% for line in prod_lines %}
 				<div id="section{{line.pk}}">    
 				<h3 class="text-center">{{line.product_line}} - Products</h3>
@@ -53,7 +60,7 @@
 				 <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#VC_spec{{line.pk}}">{{line.product_line}} - Product Vocab</button>
 					<!-- Modal -->
 					<div class="modal fade" id="VC_spec{{line.pk}}" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-					  <div class="modal-dialog">
+					  <div class="modal-dialog modal-dialog-scrollable">
 					    <div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title" id="staticBackdropLabel">{{line.product_line}} Vocab</h5>
