@@ -39,8 +39,8 @@
         <div class="card h-100">
           <img class="card-img-top" src="{% static 'img/eli5-home-page.jpg' %}" alt="">
           <div class="card-body">
-            <h4 class="card-title">ELI5</h4>
-            <p class="card-text">Ever wonder what the jargon means or why it exists? Let us explain in a way that makes sense.</p>
+            <h4 class="card-title">Industries Explained</h4>
+            <p class="card-text">Investigating new industries? Start here!</p>
           </div>
           <div class="card-footer">
             <a href="{% url 'explained' %}" class="btn btn-primary">Get Started!</a>
@@ -102,7 +102,7 @@
             <a href=" {% url 'privacy' %}">Privacy Policy</a>
           </li>
           <li>
-            <a href="#!">Acknowledgements</a>
+            <a href="{% url 'ack' %}">Acknowledgments</a>
           </li>
         <!--  <li>
             <a href="#!">Sitemap</a>

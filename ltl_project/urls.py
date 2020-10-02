@@ -81,6 +81,7 @@ urlpatterns = [
 
     url(r'^privacy-policy', views.privacy, name='privacy'),
     url(r'^terms-of-service', views.termsofservice, name='termsofservice'),
+    url(r'^acknowledgements', views.ack, name='ack'),
     path('thingstochange/', admin.site.urls),
 
 ]

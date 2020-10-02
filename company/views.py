@@ -233,3 +233,6 @@ def privacy(request):
 
 def termsofservice(request):
     return render(request, "terms-of-service.html", {})
+
+def ack(request):
+    return render(request, "acknowledgements.html", {})
