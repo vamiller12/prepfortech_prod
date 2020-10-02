@@ -28,22 +28,30 @@
   color: #0087cc;
   -webkit-transform-style: preserve-3d;
   -webkit-transition: all .8s ease-in;
+  transform-style: preserve-3d;
+  transition: all .8s ease-in;
   width: 50%;
 }
 
 .card:hover {
   -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .card .side {
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   border-radius: 6px;
 }
 
 .card .back {
   color: #0087cc;
   -webkit-backface-visibility: hidden; /*added this after most recent prod commit */
+  backface-visibility: hidden; /*added this after most recent prod commit */
   -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .foot {bottom: 0}
