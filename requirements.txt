@@ -10,6 +10,7 @@ django-widget-tweaks==1.4.8
 feedparser==5.2.1
 gunicorn==20.0.4
 jmespath==0.10.0
+mixpanel==4.7.0
 mysqlclient==2.0.1
 numpy==1.19.0
 pandas==1.0.5
