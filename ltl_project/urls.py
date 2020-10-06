@@ -78,6 +78,7 @@ urlpatterns = [
     url(r'^eli5/eli5-hci_v_ci', views.elihcivci, name='eli_hcivci'),
     url(r'^eli5/eli5-storage-types', views.elistoragetypes, name='eli_storage_types'),
     url(r'^eli5/eli5-virtualization', views.elivirtualization, name='eli_virt'),
+    url(r'^eli5/eli5-it-visualized', views.eliitpicture, name='it_visual'),
 
     url(r'^privacy-policy', views.privacy, name='privacy'),
     url(r'^terms-of-service', views.termsofservice, name='termsofservice'),

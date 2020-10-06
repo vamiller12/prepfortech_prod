@@ -41,7 +41,7 @@
 		      </ul>
 		     </nav>
 		<div class="col-md-9 col-8">
-			<div class="alert alert-primary" role="alert"><a  href="{{company.product_page_url}}"> Want to view the {{company.companyName}} product line up? Check it out!</a></div>
+			<div class="alert alert-primary" role="alert"><a target="_blank" rel="noopener noreferrer" href="{{company.product_page_url}}"> Want to view the {{company.companyName}} product line up? Check it out!</a></div>
 				{% for row in prod_lines %}
 				  <div id="section{{row.pk}}"> 
   					<h1 align="center">{{row.product_line}}</h1>

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container1">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'explained' %}">Industries Explained</a></li>
+      <li class="breadcrumb-item active">Hyperconverged Infrastructure vs Converged Infrastructure</li>
+    </ol>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style >
+.container1{    
+position: relative;
+top: 53px;
+left: 210px;
+width: 80%;
+height: 100%;}
+
+
+</style>
+
+<div class ="container">
+    <div class ="row">
+        <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <p> Security &amp; services</p>
+            </div>
+        </div>
+         <div class="row">
+    <div class="col-md-8" style="height:500px;background-color:green;">
+      <div class="row" style="height:50%;background-color:red;">
+        <div class="col-md-12">
+          <p>A</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <p>B</p>
+        </div>
+        <div class="col-lg-6" >
+          <p>C</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" style="height:500px;background-color:black">
+
+    </div>
+  </div>
+        
+        </div>
+    </div>
+</div>    
+
+{% endblock %}

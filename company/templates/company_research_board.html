@@ -39,8 +39,15 @@
    		      <td>{{ row.employee_count }}</td>
  		       </tr>
         {% else %}
+        <tr>
+            <td>{{ row.companyName }} <span class="badge badge-secondary">Coming Soon!</span></td>
+            <td>{{ row.industry }}</td>
+            <td>{{ row.headquarters }}</td>
+            <td>{{ row.employee_count }}</td>
+           </tr>
         {% endif %}
  	   {% endfor %} 
+     
 	     </tbody>
       </table>
     {% if company.has_other_pages %}

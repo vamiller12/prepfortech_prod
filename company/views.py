@@ -28,7 +28,7 @@ def company_board(request):
 
 @login_required
 def company_research_board(request):
-    company = Company.objects.order_by('companyName')
+    company = Company.objects.order_by('is_draft','companyName')
     
     company_search = request.GET.get('company_search')
     if company_search != '' and company_search is not None:
@@ -48,6 +48,7 @@ def company_research_board(request):
     mp.track("Company Research Viewed", {"Company Research": "Page Viewed"}) 
 
     return render(request, "company_research_board.html", {'company': company})
+
 
 @login_required
 def company_specific(request, pk):
@@ -263,6 +264,11 @@ def elihcivci(request):
 def elistoragetypes(request):
     mp.track("Explained Storage Types Viewed",{"UserID": request.user.pk})
     return render(request, "eli5-storage-types.html", {})
+
+@login_required
+def eliitpicture(request):
+    mp.track("Explained Storage Types Viewed",{"UserID": request.user.pk})
+    return render(request, "eli5-it-overview-picture.html", {})
 
 def privacy(request):
     return render(request, "privacy-policy.html", {})
