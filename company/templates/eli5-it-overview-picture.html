@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block 'content' %}
-
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
 <div class="container1">
     <ol class="breadcrumb my-4">
       <li class="breadcrumb-item"><a href="{% url 'explained' %}">Industries Explained</a></li>
-      <li class="breadcrumb-item active">Hyperconverged Infrastructure vs Converged Infrastructure</li>
+      <li class="breadcrumb-item active">Infrastructure Visualized</li>
     </ol>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <style >
@@ -17,39 +20,109 @@ width: 80%;
 height: 100%;}
 
 
+
+.row > div {
+  flex: 1;
+  height: 55px;
+  background: lightgrey;
+  border: 1px solid grey;
+}
+
+#full-col{
+    height: 85px;
+    border-bottom: 0;
+    border-top: 0;
+}
+#inner-col{
+    height: 85px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+#first-inner-col{
+    height: 105px;
+    border-bottom: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+#first-col{
+    height: 105px;
+    border-top: 0;
+    border-bottom: 0;
+}
+#midd-inner-col{
+    height: 55px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+}
+#mid-col{
+    height: 55px;
+    border-bottom: 0;
+    border-top: 0;
+
+}
 </style>
-
-<div class ="container">
-    <div class ="row">
-        <div class="col-sm-12">
-        <div class="card">
-            <div class="card-body">
-                <p> Security &amp; services</p>
-            </div>
-        </div>
-         <div class="row">
-    <div class="col-md-8" style="height:500px;background-color:green;">
-      <div class="row" style="height:50%;background-color:red;">
-        <div class="col-md-12">
-          <p>A</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <p>B</p>
-        </div>
-        <div class="col-lg-6" >
-          <p>C</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4" style="height:500px;background-color:black">
-
-    </div>
-  </div>
-        
+<div class ="container" align="center">
+    <div class="card">
+        <div class="card-header" align="left">Infrastructure Explained</div>
+        <div class="card-body">
+            <p class="card-text" align="left">
+            Below is a visual representation of how the different pieces of infrastructure come together to allow a system to function. The hardware components that are covered in this section are powerful by themselves, but play a role in the larger infrastructure picture.      
+            </p>
         </div>
     </div>
-</div>    
-
+    <hr/>
+    <div class="row">
+        <div class="col-xs-12">
+            <p align="center"><a href="{% url 'eli_secsys'%}">Security And Monitoring</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div id="first-col" class="col-md-4">
+            <p><a href="{% url 'eli_storage'%}">Developer Tools</a></p>
+        </div>
+        <div id="first-inner-col" class="col-xs-12 col-md-4">
+            <p><a href="{% url 'eli_storage'%}">Applications and Devices</a></p>
+        </div>
+        <div id="first-col" class="col-md-4">
+            <p><a href="{% url 'eli_storage'%}">Automation and Management</a></p>
+         </div>
+    </div>
+    <div class="row">
+        <div id="mid-col" class="col-md-4">
+        </div>
+        <div id="midd-inner-col" class="col-md-4">
+            <p><a href="{% url 'eli_middleware'%}">Middleware</a></p>
+        </div>
+        <div id="mid-col" class="col-xs-12 col-md-4">
+        </div>
+    </div>
+    <div class="row">
+        <div id="full-col" class="col-xs-12 col-md-4">
+        </div>
+        <div id="inner-col" class="col-md-4">
+            <p><a href="{% url 'eli_containers'%}">Containers</a></p>
+        </div>
+        <div id="full-col" class="col-md-4">
+        </div>
+    </div>
+    <div class="row">
+        <div id="full-col" class="col-md-4">
+        </div>
+        <div id="inner-col" class="col-md-4">
+            <p><a href="{% url 'eli_opssys'%}">Operating System/Software</a></p>
+        </div>
+        <div id="full-col" class="col-xs-12 col-md-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <p><a href="{% url 'eli_storage'%}">Storage / HCI/ CI</a></p>
+        </div>
+    </div>
+</div>   
+</div> 
 {% endblock %}
+
