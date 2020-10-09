@@ -7,6 +7,12 @@ from .utils import get_client_ip
 
 # Create your models here.
 
+class Business_Type(models.Model):
+	bus_type = models.CharField(max_length=1000, unique=True) 
+
+	def __str__(self):
+        	return str(self.bus_type)
+
 class Company(models.Model):
 	companyName = models.CharField(max_length=100, unique=True)
 	industry = models.CharField(max_length=100)
@@ -19,6 +25,7 @@ class Company(models.Model):
 	is_draft = models.BooleanField(default=True)
 	fiscal_year_end = models.CharField(max_length=100, default='Jan 1 2020')
 	overview = models.CharField(max_length=1000, default='Red Hat')
+	business_type = models.ForeignKey(Business_Type, related_name='business_type', on_delete=models.CASCADE, default=1)
 
 	def __str__(self):
         	return str(self.companyName)

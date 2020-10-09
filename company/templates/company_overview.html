@@ -24,9 +24,7 @@
         border:3px solid #333333;}
 
 
-    <div id="widget-news"></div>
-    <script src="https://softcapital.com/widget/widget.js"></script>
-    <script>createSoftCapitalWidget("News", "widget-news", {"symbol":"MSFT","view":"panel","title":"News","showNews":"10","showImg":true,"showTooltip":true,"id":"widget-news","css":{"panel":{"title":"color:red;font-weight:bold","itemTitle":"color:red"}}});</script>
+   
 
 
  </style>   
@@ -37,8 +35,16 @@
     <p>{{company.overview}}</p>
     <h4>Company Website</h4>
     <a href='{{company.companyURL}}' style="color: #0000FF">{{company.companyURL}}</a>
-    <h4 class="card-title">Competitors</h4>
-    <p class="card-text">{{company.competitors}}</p>
+    <div class="row">
+        <div class="col-md-4">
+            <h4 class="card-title">Competitors:</h4>
+            <p class="card-text">{{company.competitors}}</p>
+        </div>
+        <div class="col-md-4">
+            <h4 class="card-title">Business Type:</h4>
+            <p class="card-text">{{company.business_type}}</p>
+        </div>
+    </div>
 </div> 
 </div>
 <div id="company-news" class="card" align="left">
