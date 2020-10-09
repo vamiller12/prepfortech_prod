@@ -14,7 +14,7 @@ mp = Mixpanel('299d24197987c4f83080961a8aa854b5')
 # Create your views here.
 @login_required
 def home(request):
-    mp.track("Homepage Viewed",{"UserID": request.user.pk}) 
+    mp.track("Homepage Viewed",{"Path": request.path, "UserID": request.user.pk}) 
     return render(request, "home.html", {})
 
 @login_required
@@ -143,7 +143,7 @@ def product_spec(request, pk):
     get_obj = get_object_or_404(ProductSpecific, pk=first.id)
     object_viewed_signal.send(get_obj.__class__, instance=get_obj, request=request)
 
-    mp.track("Specific Products Viewed",{"Specific Products": company.companyName, "UserID": request.user.pk})
+    mp.track("Specific Products Viewed",{"Product Catalog": company.companyName, "UserID": request.user.pk})
 
     return render(request, 'product_specific.html', {"company": company, "prod_spec":prod_spec, "prod_lines":prod_lines, "prod_spec_vocab":prod_spec_vocab} )
 
@@ -180,101 +180,104 @@ def dictionary(request):
     if term_search != '' and term_search is not None:
         dictionary = (dictionary.filter(term__icontains=term_search) ) | (dictionary.filter(definition__icontains=term_search))
 
-    mp.track("Dictionary Page Viewed",{"Lookup Value": term_search, "UserID": request.user.pk})
+    mp.track("Dictionary Page Viewed",{"Dictionary Search Value": term_search, "UserID": request.user.pk})
 
     return render(request, "dictionary.html", {'dictionary':dictionary})
 
 @login_required
 def eli5(request):
-    mp.track("Explained Section Viewed",{"UserID": request.user.pk})
+    mp.track("Explained Section Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5.html", {})
 
 @login_required
 def eli5server(request):
-    mp.track("Explained Servers Viewed",{"UserID": request.user.pk})
+    mp.track("Explained Servers Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-server.html", {})
 
 @login_required
 def eli5xaas(request):
-    mp.track("Explained XaSS  Viewed",{"UserID": request.user.pk})
+    mp.track("Explained XaSS  Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-xaas.html", {})
 
 @login_required
 def eli5thecloud(request):
-    mp.track("Explained The Cloud  Viewed",{"UserID": request.user.pk})
+    mp.track("Explained The Cloud  Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-thecloud.html", {})
 
 @login_required
 def eli5nosqlvsql(request):
-    mp.track("Explained NoSQL v SQL Viewed",{"UserID": request.user.pk})
+    mp.track("Explained NoSQL v SQL Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-nosql-vs-sql.html", {})
 
 @login_required
 def eli54Gto5G(request):
-    mp.track("Explained 4G to 5G Viewed",{"UserID": request.user.pk})
+    mp.track("Explained 4G to 5G Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-4G-to-5G.html", {})
 
 @login_required
 def eliinfrastructure(request):
-    mp.track("Explained Infrastructure Viewed",{"UserID": request.user.pk})
+    mp.track("Explained Infrastructure Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-it_infrastructure.html", {})
 
 @login_required
 def elistorage(request):
-    mp.track("Explained Storage Viewed",{"UserID": request.user.pk})
+    mp.track("Explained Storage Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-storage.html", {})
 
 @login_required
 def eliswitches(request):
-    mp.track("Explained Switches Viewed",{"UserID": request.user.pk})
+    mp.track("Explained Switches Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-switches.html", {})
 
 @login_required
 def elirouters(request):
-    mp.track("Explained Routers Viewed",{"UserID": request.user.pk})
+    mp.track("Explained Routers Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-routers.html", {})
 @login_required
 def elimiddleware(request):
-    mp.track("Explained Middleware Viewed",{"UserID": request.user.pk})
+    mp.track("Explained Middleware Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-middleware.html", {})
 @login_required
 def eliopssys(request):
-    mp.track("Explained Oper. Sys. Viewed",{"UserID": request.user.pk})
+    mp.track("Explained Oper. Sys. Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-operating-systems.html", {})
 @login_required
 def elisecsys(request):
-    mp.track("Explained Security Sys. Viewed",{"UserID": request.user.pk})
+    mp.track("Explained Security Sys. Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-security-systems.html", {})
 @login_required
 def elicontainers(request):
-    mp.track("Explained Containers Viewed",{"UserID": request.user.pk})
+    mp.track("Explained Containers Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-containers.html", {})
 
 @login_required
 def elivirtualization(request):
-    mp.track("Explained Virt. Viewed",{"UserID": request.user.pk})
+    mp.track("Explained Virt. Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-virtualization.html", {})
 
 @login_required
 def elihcivci(request):
-    mp.track("Explained HCI v CI Viewed",{"UserID": request.user.pk})
+    mp.track("Explained HCI v CI Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-hcivci.html", {})
 
 @login_required
 def elistoragetypes(request):
-    mp.track("Explained Storage Types Viewed",{"UserID": request.user.pk})
+    mp.track("Explained Storage Types Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-storage-types.html", {})
 
 @login_required
 def eliitpicture(request):
-    mp.track("Explained Storage Types Viewed",{"UserID": request.user.pk})
+    mp.track("Explained Storage Types Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "eli5-it-overview-picture.html", {})
 
 def privacy(request):
+    mp.track("Explained Storage Types Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "privacy-policy.html", {})
 
 def termsofservice(request):
+    mp.track("Explained Storage Types Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "terms-of-service.html", {})
 
 def ack(request):
+    mp.track("Explained Storage Types Viewed",{"Path": request.path, "UserID": request.user.pk})
     return render(request, "acknowledgements.html", {})
